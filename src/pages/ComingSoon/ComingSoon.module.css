@@ -1,0 +1,39 @@
+.wrap {
+  max-width: 32rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.icon {
+  margin-inline: auto;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 999px;
+  background-color: var(--secondary);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 1.875rem;
+  }
+}
+
+.text {
+  margin-top: 1rem;
+  color: var(--muted-foreground);
+}
+
+.action {
+  margin-top: 2rem;
+}

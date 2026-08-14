@@ -1,0 +1,145 @@
+.launcher {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1rem;
+  z-index: 50;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 999px;
+  background-color: #25d366;
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.launcher:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 640px) {
+  .launcher {
+    right: 1.5rem;
+  }
+}
+
+.panel {
+  position: fixed;
+  bottom: 6rem;
+  right: 1rem;
+  z-index: 50;
+  width: 340px;
+  max-width: calc(100vw - 2rem);
+  border-radius: var(--radius-2xl);
+  background-color: var(--card);
+  color: var(--card-foreground);
+  box-shadow: var(--shadow-elevated);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+@media (min-width: 640px) {
+  .panel {
+    right: 1.5rem;
+  }
+}
+
+.panelHeader {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.panelTitle {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.panelStatus {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.statusDot {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 999px;
+  background-color: #4ade80;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 0.25rem;
+}
+
+.panelBody {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.greeting {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.greeting a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.quickActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quickAction {
+  width: 100%;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+  transition: var(--transition-smooth);
+}
+
+.quickAction:hover {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.callCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  font-weight: 600;
+  font-size: 0.9rem;
+}

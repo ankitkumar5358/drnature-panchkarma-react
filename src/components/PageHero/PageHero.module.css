@@ -1,0 +1,87 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--sage-soft);
+  border-bottom: 1px solid var(--border);
+}
+
+.leaf {
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  inset-block: 0;
+  height: 100%;
+  width: auto;
+  opacity: 0.9;
+}
+
+.leafLeft {
+  left: 0;
+}
+
+.leafRight {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  padding-block: 4rem;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding-block: 6rem;
+  }
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--muted-foreground);
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+.breadcrumb {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.breadcrumb a {
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.breadcrumb a:hover {
+  color: var(--primary);
+}
+
+.breadcrumbCurrent {
+  color: var(--foreground);
+  font-weight: 600;
+}

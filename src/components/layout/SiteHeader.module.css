@@ -1,0 +1,288 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+}
+
+.topBar {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 0.85rem;
+}
+
+.topBarInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  height: 2.75rem;
+}
+
+.socials {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .socials {
+    display: flex;
+  }
+}
+
+.socialLink {
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklch, var(--primary-foreground) 40%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.socialLink:hover {
+  background-color: var(--primary-foreground);
+  color: var(--primary);
+}
+
+.marqueeViewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.marqueeTrack {
+  display: flex;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 500;
+  animation: marquee 25s linear infinite;
+}
+
+.marqueeItem {
+  padding-inline: 2rem;
+}
+
+.emailLink {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition-smooth);
+}
+
+.emailLink:hover {
+  opacity: 0.85;
+}
+
+@media (min-width: 768px) {
+  .emailLink {
+    display: inline-flex;
+  }
+}
+
+.emailText {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .emailText {
+    display: inline;
+  }
+}
+
+.mainNav {
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+.mainNav .container {
+  max-width: 1360px;
+}
+
+.mainNavInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 5rem;
+  padding-block: 0.625rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+  max-width: 15rem;
+}
+
+.logo {
+  height: 2.75rem;
+  width: 2.75rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1440px) {
+  .logo {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+.brandText {
+  line-height: 1.25;
+}
+
+.brandName {
+  font-family: var(--font-serif);
+  font-size: clamp(0.85rem, 1.7vw, 1.25rem);
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.01em;
+  transition: var(--transition-smooth);
+}
+
+.brand:hover .brandName {
+  color: var(--accent);
+}
+
+.brandSub {
+  display: none;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted-foreground);
+}
+
+@media (min-width: 1440px) {
+  .brandSub {
+    display: block;
+  }
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+@media (min-width: 1440px) {
+  .desktopNav {
+    display: flex;
+  }
+}
+
+.navLink {
+  position: relative;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--foreground);
+  white-space: nowrap;
+  transition: var(--transition-smooth);
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: -0.1rem;
+  height: 2px;
+  background-color: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+.navLinkActive {
+  color: var(--primary);
+}
+
+.navLinkActive::after {
+  transform: scaleX(1);
+}
+
+.chatCta {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 1440px) {
+  .chatCta {
+    display: flex;
+  }
+}
+
+.menuButton {
+  padding: 0.5rem;
+  color: var(--foreground);
+  background: transparent;
+  border: none;
+  display: inline-flex;
+}
+
+@media (min-width: 1440px) {
+  .menuButton {
+    display: none;
+  }
+}
+
+.mobileNav {
+  border-top: 1px solid var(--border);
+  background-color: var(--background);
+}
+
+@media (min-width: 1440px) {
+  .mobileNav {
+    display: none;
+  }
+}
+
+.mobileNavInner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-block: 0.75rem;
+}
+
+.mobileNavLink {
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.mobileNavLink:hover {
+  background-color: var(--secondary);
+}
+
+.mobileNavLinkActive {
+  color: var(--primary);
+  background-color: var(--secondary);
+}
+
+.mobileCallCta {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: 600;
+}

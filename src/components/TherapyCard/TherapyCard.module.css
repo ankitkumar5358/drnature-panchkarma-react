@@ -1,0 +1,32 @@
+.card {
+  padding: 1.25rem;
+  border-radius: var(--radius-xl);
+}
+
+.card:hover {
+  border-color: var(--accent);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  transition: var(--transition-smooth);
+}
+
+.card:hover .name {
+  color: var(--accent);
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+}

@@ -1,0 +1,66 @@
+.intro {
+  max-width: 48rem;
+  margin-inline: auto;
+  text-align: center;
+  color: var(--muted-foreground);
+}
+
+.grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.packageCard {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.packageCard svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.disclaimer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+.disclaimerLabel {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.ctaWrap {
+  margin-top: 2.5rem;
+  text-align: center;
+}

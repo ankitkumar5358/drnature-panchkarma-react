@@ -1,0 +1,31 @@
+.wrap {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-inline: 1rem;
+}
+
+.code {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.title {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.text {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+}
+
+.action {
+  margin-top: 1.5rem;
+}

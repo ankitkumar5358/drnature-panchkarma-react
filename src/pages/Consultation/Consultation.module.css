@@ -1,0 +1,47 @@
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.optionCard {
+  padding: 1.75rem;
+  text-align: center;
+}
+
+.icon {
+  margin-inline: auto;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 999px;
+  background-color: var(--secondary);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.optionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.optionText {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+}
+
+.optionAction {
+  margin-top: 1.25rem;
+}

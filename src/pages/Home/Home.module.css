@@ -1,0 +1,200 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: var(--gradient-hero);
+}
+
+.heroContent {
+  position: relative;
+  text-align: center;
+  color: var(--primary-foreground);
+  padding-block: 6rem 5rem;
+}
+
+@media (min-width: 768px) {
+  .heroContent {
+    padding-block: 9rem 6rem;
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  margin-top: 1.25rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.15;
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 3.75rem;
+  }
+}
+
+.heroSubtitle {
+  margin-top: 1.25rem;
+  font-size: 1.05rem;
+  opacity: 0.95;
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .heroSubtitle {
+    font-size: 1.25rem;
+  }
+}
+
+.heroActions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.featureGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .featureGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .featureGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.introSection {
+  background-image: var(--gradient-warm);
+}
+
+.introGrid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .introGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.introImage {
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-elevated);
+  width: 100%;
+}
+
+.introTitle {
+  margin-top: 0.75rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .introTitle {
+    font-size: 2.25rem;
+  }
+}
+
+.introText {
+  margin-top: 1rem;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+
+.introText + .introText {
+  margin-top: 0.75rem;
+}
+
+.readMore {
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  transition: var(--transition-smooth);
+}
+
+.readMore:hover {
+  color: var(--accent);
+}
+
+.therapyGrid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .therapyGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .therapyGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.viewAllWrap {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.prose {
+  margin-top: 2.5rem;
+  max-width: 56rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.prose p {
+  color: var(--muted-foreground);
+  line-height: 1.75;
+}
+
+.altSection {
+  background-image: var(--gradient-warm);
+}
