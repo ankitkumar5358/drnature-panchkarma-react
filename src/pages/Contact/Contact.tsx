@@ -1,7 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { FiPhone, FiMail, FiMapPin, FiClock, FiSend, FiCheckCircle, FiMessageCircle } from "react-icons/fi";
 import { SEO } from "../../components/SEO/SEO";
-import { PageHero } from "../../components/PageHero/PageHero";
 import { siteConfig } from "../../data/site";
 import styles from "./Contact.module.css";
 
@@ -40,11 +39,11 @@ export function Contact() {
         description={`Get in touch with ${siteConfig.name}. Book an appointment, ask about treatments, or visit our Ayurvedic Panchkarma centre.`}
       />
 
-      <PageHero
+      {/* <PageHero
         title="Contact Us"
         subtitle="We'd love to hear from you. Reach out to book an appointment or ask any question."
         breadcrumb="Contact"
-      />
+      /> */}
 
       <section className="section">
         <div className="container">

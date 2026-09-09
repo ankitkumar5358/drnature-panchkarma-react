@@ -6,28 +6,28 @@ import { FeatureCard } from "../../components/FeatureCard/FeatureCard";
 import { TherapyCard } from "../../components/TherapyCard/TherapyCard";
 import { SectionHeading } from "../../components/SectionHeading/SectionHeading";
 import { CTASection } from "../../components/CTASection/CTASection";
-import heroImg from "../../assets/hero-panchkarma.jpg";
-import shirodharaImg from "../../assets/shirodhara.jpg";
 import herbsImg from "../../assets/herbs.jpg";
 import { siteConfig } from "../../data/site";
 import styles from "./Home.module.css";
+import HealingThroughAyurveda from "../../assets/healing-through-ayurveda.png";
+import AboutPanchkarma from "../../assets/about-panchkarma.png";
 
 const therapyPreview = [
-  { name: "Vaman", desc: "Therapeutic emesis to cleanse Kapha toxins." },
-  { name: "Virechana", desc: "Purgation therapy to eliminate Pitta toxins." },
-  { name: "Basti", desc: "Medicated enema — the king of Vata treatments." },
-  { name: "Nasya", desc: "Nasal medication for head & sinus health." },
-  { name: "Raktamokshana", desc: "Blood purification for skin & vascular issues." },
-  { name: "Abhyanga", desc: "Full-body warm herbal oil massage." },
-  { name: "Shirodhara", desc: "Continuous oil stream on the forehead." },
-  { name: "Swedan", desc: "Herbal steam therapy for deep detox." },
+  { name: "Nasya", desc: "Nasal therapeutic care for head, sinus and respiratory wellness." },
+  { name: "Shirodhara", desc: "A flowing oil therapy for mental calm, stress relief and deep relaxation." },
+  { name: "Matra Basti", desc: "A gentle medicated enema supporting balance and long-term wellbeing." },
+  { name: "Abhyanga", desc: "A full-body Ayurvedic massage for rejuvenation and circulation." },
+  { name: "Kati Basti", desc: "Targeted support for the lower back and spine with warm herbal care." },
+  { name: "Udvartana", desc: "Herbal body massage for detoxification and skin refreshment." },
+  { name: "Ksheera Dhara", desc: "Cooling milk therapy for relaxation and stress recovery." },
+  { name: "Marma Chikitsa", desc: "Energy-based therapy focused on balance, vitality and recovery." },
 ];
 
 const features = [
-  { icon: FaLeaf, title: "100% Herbal", desc: "Completely natural treatments with minimal side effects." },
-  { icon: FaHeartbeat, title: "Expert Doctors", desc: "Best Ayurvedic doctors with decades of experience." },
-  { icon: FaMagic, title: "Personalised Care", desc: "Custom diet, lifestyle and therapy plan for you." },
-  { icon: FaShieldAlt, title: "Authentic Panchkarma", desc: "Traditional therapies done under expert supervision." },
+  { icon: FaLeaf, title: "Authentic Ayurveda", desc: "Traditional Ayurvedic techniques rooted in time-tested wellness principles." },
+  { icon: FaHeartbeat, title: "Experienced Ayurvedic Professionals", desc: "Personalized guidance from skilled professionals focused on long-term health." },
+  { icon: FaMagic, title: "Holistic Healing", desc: "Care for the body, mind and lifestyle through balanced natural therapies." },
+  { icon: FaShieldAlt, title: "Safe & Hygienic", desc: "Care delivered in a calm, clean and supportive environment." },
 ];
 
 export function Home() {
@@ -39,22 +39,34 @@ export function Home() {
       />
 
       <section className={styles.hero}>
-        <img src={heroImg} alt="Ayurvedic panchkarma therapy room" className={styles.heroImage} />
-        <div className={styles.heroOverlay} />
-        <div className={`container ${styles.heroContent}`}>
-          <span className={styles.badge}>{siteConfig.city} • Authentic Ayurveda</span>
-          <h1 className={styles.heroTitle}>Ayurvedic Detox & Healing for a Naturally Balanced Life</h1>
-          <p className={styles.heroSubtitle}>
-            Experience the power of traditional Panchkarma therapies that detoxify your body, balance your doshas and
-            help you live a healthy, disease-free life — naturally and safely.
-          </p>
-          <div className={styles.heroActions}>
-            <Link to="/contact" className="btn btn-accent">
-              Book Appointment <FiArrowRight />
-            </Link>
-            <Link to="/therapies" className="btn btn-outline-light">
-              Explore Therapies
-            </Link>
+        <div className="container">
+          <div className={styles.heroInner}>
+            <div className={styles.heroContent}>
+              <span className={styles.badge}>{siteConfig.city} • Ayurvedic Wellness</span>
+              <h1 className={styles.heroTitle}>
+                Restore balance.
+                <br />
+                Rebuild vitality.
+              </h1>
+              <div className={styles.heroDivider} />
+              <p className={styles.heroSubtitle}>
+                Authentic Ayurvedic Panchkarma therapies and personalized wellness care designed to support natural
+                detox, deeper healing, and long-term wellbeing from the inside out.
+              </p>
+              <div className={styles.heroActions}>
+                <Link to="/contact" className="btn btn-primary">
+                  Book a Consultation <FiArrowRight />
+                </Link>
+                <Link to="/therapies" className="btn btn-outline">
+                  Explore Our Therapies
+                </Link>
+              </div>
+              <div className={styles.heroMeta}>
+                <span>Traditional care</span>
+                <span>Personalized plans</span>
+                <span>Natural healing</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -70,50 +82,58 @@ export function Home() {
       </section>
 
       <section className={`section ${styles.introSection}`}>
-        <div className={`container ${styles.introGrid}`}>
-          <img src={shirodharaImg} alt="Shirodhara therapy" className={styles.introImage} />
-          <div>
-            <span className="eyebrow">Welcome to {siteConfig.name}</span>
-            <h2 className={styles.introTitle}>Ayurvedic Detox &amp; Healing</h2>
+        <div className={styles.introGrid}>
+          <img src={HealingThroughAyurveda} alt="Healing Through Ayurveda" className={styles.introImage} />
+          <div className={`card ${styles.introContent}`}>
+            <span className="eyebrow">Our Philosophy</span>
+            <h2 className={styles.introTitle}>Healing Through Ayurveda</h2>
             <p className={styles.introText}>
-              Step into a sanctuary of natural, calming, and transformative healing. Rooted in the timeless wisdom of
-              Ayurveda, our Panchkarma therapies gently eliminate accumulated toxins (Ama), restore balance among the
-              doshas — Vata, Pitta, and Kapha — and awaken the body&rsquo;s innate healing intelligence. Each
-              treatment is carefully personalized to address your unique constitution, guiding you beyond temporary
-              relief toward true and lasting wellness.
+              Ayurveda is a holistic approach to wellness that restores balance and supports long-term health. It
+              recognizes that every individual is unique and offers personalized care based on their Vata, Pitta and
+              Kapha balance.
             </p>
             <p className={styles.introText}>
-              Whether you seek relief from chronic pain, support for lifestyle disorders such as diabetes,
-              hypertension, or a complete mind-body detox, our holistic approach revitalizes energy, strengthens
-              immunity, and restores inner harmony. Through a blend of authentic therapies, mindful nutrition, and
-              lifestyle guidance, we help you reconnect with your healthiest self.
+              Through personalized nutrition, Panchakarma and daily wellness practices, Ayurveda supports healthy
+              digestion, helps eliminate toxins and addresses the root causes of imbalance for lasting well-being.
             </p>
-            <Link to="/about" className={styles.readMore}>
-              Read more about us <FiArrowRight />
-            </Link>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className={`section ${styles.aboutPanchkarmaSection}`}>
+        <div className={styles.aboutPanchkarmaGrid}>
+          <div className={styles.aboutPanchkarmaContent}>
+            <span className="eyebrow">ABOUT PANCHKARMA</span>
+            <h2 className={styles.aboutPanchkarmaTitle}>Panchkarma Therapy</h2>
+            <p className={styles.aboutPanchkarmaText}>
+              Panchkarma is Ayurveda&rsquo;s classical detoxification and rejuvenation therapy designed to cleanse the
+              body, balance the doshas, and support natural healing. Its five core therapies—Vamana, Virechana,
+              Basti, Nasya, and Raktamokshana—help eliminate accumulated toxins, improve digestion, support
+              immunity, reduce stress, and promote physical and mental well-being.
+            </p>
+            <p className={styles.aboutPanchkarmaText}>
+              Personalized according to individual Prakriti, Panchkarma may also support the management of
+              lifestyle-related health concerns, chronic discomfort, and metabolic imbalances, helping the body regain
+              balance, vitality, and lasting wellness naturally.
+            </p>
+          </div>
+
+          <img src={AboutPanchkarma} alt="Panchkarma treatment setup" className={styles.aboutPanchkarmaImage} />
+        </div>
+      </section>
+
+      <section className={`section ${styles.traditionalCareSection}`}>
         <div className="container">
-          <SectionHeading eyebrow="The Science of Detox" title="About Panchkarma" />
+          <SectionHeading eyebrow="The Science of Detox" title="Traditional Ayurvedic care" />
           <div className={styles.prose}>
             <p>
-              Experience the profound depth of healing with Panchkarma, Ayurveda&rsquo;s most powerful
-              detoxification and rejuvenation therapy designed to purify the body and restore internal balance.
-              Panchkarma comprises five core therapies: Vamana (therapeutic emesis) to eliminate excess Kapha,
-              Virechana (purgation) to remove Pitta-related toxins, Basti (medicated enema) to balance Vata and
-              nourish the body, Nasya (nasal therapy) to cleanse the head region and enhance mental clarity, and
-              Raktamokshana (blood purification) to detoxify and support overall health.
+              Panchakarma is a deeply restorative branch of Ayurveda focused on cleansing the body, restoring dosha
+              balance and supporting vitality from the inside out. It is designed to help the body release accumulated
+              toxins while preparing the mind and senses for better long-term wellbeing.
             </p>
             <p>
-              These therapies work synergistically to remove deep-rooted toxins (Ama), restore doshic balance and
-              activate the body&rsquo;s natural healing processes. Beyond detoxification, Panchkarma offers extensive
-              benefits — including relief from chronic pain, improved digestion, enhanced immunity, reduced stress,
-              better skin health, and effective management of lifestyle disorders such as diabetes and hypertension.
-              At our center, every therapy is customized according to your individual constitution (Prakriti),
-              ensuring safe, effective and long-lasting results.
+              At Dr. Nature Holistic Panchkarma, each therapy is considered with care, intention and personalization,
+              helping to support the body&rsquo;s natural healing patterns and encourage sustainable wellness for everyday life.
             </p>
           </div>
         </div>
@@ -121,33 +141,10 @@ export function Home() {
 
       <section className={`section ${styles.altSection}`}>
         <div className="container">
-          <SectionHeading eyebrow="Our Philosophy" title="Healing Through Ayurveda" />
-          <div className={styles.prose}>
-            <p>
-              Ayurveda offers a refined and holistic approach to wellness that focuses on restoring internal balance
-              rather than merely managing symptoms. Rooted in ancient wisdom, it recognizes each individual&rsquo;s
-              unique constitution (Prakriti), governed by the three fundamental energies — Vata, Pitta and Kapha —
-              and tailors treatments accordingly. By integrating personalized nutrition (Ahara), therapeutic
-              detoxification through Panchkarma and balanced daily routines (Dinacharya), Ayurveda strengthens the
-              body&rsquo;s digestive fire (Agni), ensuring optimal metabolism, absorption and elimination of toxins
-              (Ama).
-            </p>
-            <p>
-              This comprehensive approach addresses the root cause of disease while harmonizing the connection
-              between body, mind and spirit. The result is a stronger, more resilient system that supports long-term
-              health, enhances vitality and helps prevent future imbalances — offering a sustainable path to
-              complete well-being.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
           <SectionHeading
             eyebrow="Our Specialities"
             title="Authentic Panchkarma Therapies"
-            description="All traditional Panchkarma procedures, performed under expert supervision in a calm, healing environment."
+            description="Traditional Panchkarma procedures performed under expert guidance in a calm, healing environment."
           />
           <div className={styles.therapyGrid}>
             {therapyPreview.map((t) => (
@@ -165,10 +162,10 @@ export function Home() {
       <CTASection
         image={herbsImg}
         title="Begin Your Healing Journey Today"
-        description="Personalised consultation with our expert Ayurvedic doctors. Take the first step toward a healthier, balanced life."
+        description="Personalised Ayurvedic consultation with experienced professionals to understand your needs and guide you towards a balanced wellness journey."
       >
-        <Link to="/contact" className="btn btn-accent">
-          Book Your Consultation <FiArrowRight />
+        <Link to="/contact" className="btn btn-primary">
+          Book a Consultation <FiArrowRight />
         </Link>
       </CTASection>
     </>

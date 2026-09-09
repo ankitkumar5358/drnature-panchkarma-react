@@ -1,74 +1,63 @@
 .hero {
   position: relative;
-  overflow: hidden;
-}
-
-.heroImage {
-  position: absolute;
-  inset: 0;
-  height: 100%;
   width: 100%;
-  object-fit: cover;
+  min-height: 680px;
+  background:
+    linear-gradient(90deg, rgba(249, 244, 235, 0.94) 0%, rgba(249, 244, 235, 0.78) 30%, rgba(249, 244, 235, 0.18) 58%, rgba(19, 42, 36, 0.2) 100%),
+    url("../../assets/hero-panchkarma.jpg") center center / cover no-repeat;
+  display: flex;
+  align-items: center;
 }
 
-.heroOverlay {
-  position: absolute;
-  inset: 0;
-  background-image: var(--gradient-hero);
+.heroInner {
+  display: flex;
+  align-items: center;
+  min-height: 680px;
 }
 
 .heroContent {
   position: relative;
-  text-align: center;
-  color: var(--primary-foreground);
-  padding-block: 6rem 5rem;
-}
-
-@media (min-width: 768px) {
-  .heroContent {
-    padding-block: 9rem 6rem;
-  }
+  z-index: 1;
+  max-width: 620px;
+  padding-block: 3rem;
 }
 
 .badge {
-  display: inline-block;
-  padding: 0.4rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.9rem;
   border-radius: 999px;
-  background-color: var(--accent);
-  color: var(--accent-foreground);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(24, 63, 54, 0.12);
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .heroTitle {
-  margin-top: 1.25rem;
-  font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 1.15;
-  max-width: 56rem;
-  margin-inline: auto;
+  margin-top: 1.4rem;
+  font-size: clamp(3rem, 5vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: var(--primary);
 }
 
-@media (min-width: 768px) {
-  .heroTitle {
-    font-size: 3.75rem;
-  }
+.heroDivider {
+  width: 100%;
+  max-width: 420px;
+  height: 1px;
+  margin-top: 1.3rem;
+  background: linear-gradient(90deg, rgba(155, 122, 61, 0.9), rgba(155, 122, 61, 0.2));
 }
 
 .heroSubtitle {
-  margin-top: 1.25rem;
-  font-size: 1.05rem;
-  opacity: 0.95;
-  max-width: 42rem;
-  margin-inline: auto;
-}
-
-@media (min-width: 768px) {
-  .heroSubtitle {
-    font-size: 1.25rem;
-  }
+  margin-top: 1.4rem;
+  max-width: 560px;
+  font-size: 1.08rem;
+  color: rgba(31, 59, 49, 0.82);
+  line-height: 1.7;
 }
 
 .heroActions {
@@ -76,8 +65,27 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  gap: 0.85rem;
+}
+
+.heroMeta {
+  margin-top: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+.heroMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(24, 63, 54, 0.1);
+  color: var(--foreground);
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .featureGrid {
@@ -99,18 +107,26 @@
 }
 
 .introSection {
-  background-image: var(--gradient-warm);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  background: linear-gradient(180deg, rgba(233, 241, 233, 0.8) 0%, rgba(250, 246, 240, 0.96) 100%);
+  padding-block: clamp(4rem, 6vw, 6rem);
 }
 
 .introGrid {
   display: grid;
-  gap: 3rem;
+  gap: clamp(1.9rem, 3vw, 3.8rem);
   align-items: center;
+  width: min(90vw, 1500px);
+  max-width: 90vw;
+  margin-inline: auto;
+  padding-inline: 0;
 }
 
 @media (min-width: 768px) {
   .introGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.5fr);
   }
 }
 
@@ -118,29 +134,99 @@
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-elevated);
   width: 100%;
+  min-height: 360px;
+  aspect-ratio: 1.22 / 1;
+  object-fit: cover;
+}
+
+.introContent {
+  background: rgba(229, 239, 228, 0.48);
+  border: 1px solid rgba(32, 86, 70, 0.04);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 8px 18px rgba(28, 67, 56, 0.04);
+  padding: clamp(1.5rem, 2.6vw, 2.4rem);
 }
 
 .introTitle {
   margin-top: 0.75rem;
-  font-size: 1.875rem;
-  font-weight: 700;
+  font-size: clamp(2rem, 3vw, 2.9rem);
   color: var(--primary);
-}
-
-@media (min-width: 768px) {
-  .introTitle {
-    font-size: 2.25rem;
-  }
 }
 
 .introText {
   margin-top: 1rem;
   color: var(--muted-foreground);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .introText + .introText {
   margin-top: 0.75rem;
+}
+
+.aboutPanchkarmaSection {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  background: linear-gradient(180deg, rgba(239, 246, 236, 0.84) 0%, rgba(247, 242, 234, 0.96) 100%);
+  padding-block: clamp(4rem, 6vw, 6rem);
+}
+
+.aboutPanchkarmaGrid {
+  display: grid;
+  gap: clamp(1.9rem, 3vw, 3.8rem);
+  align-items: center;
+  width: min(90vw, 1500px);
+  max-width: 90vw;
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
+@media (min-width: 768px) {
+  .aboutPanchkarmaGrid {
+    grid-template-columns: minmax(0, 1.42fr) minmax(0, 1.32fr);
+  }
+}
+
+.aboutPanchkarmaContent {
+  order: 1;
+  background: rgba(229, 239, 228, 0.48);
+  border: 1px solid rgba(32, 86, 70, 0.04);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 8px 18px rgba(28, 67, 56, 0.04);
+  padding: clamp(1.5rem, 2.6vw, 2.4rem);
+}
+
+.aboutPanchkarmaTitle {
+  margin-top: 0.75rem;
+  font-size: clamp(2rem, 3vw, 2.9rem);
+  color: var(--primary);
+}
+
+.aboutPanchkarmaText {
+  margin-top: 1rem;
+  color: var(--muted-foreground);
+  line-height: 1.8;
+}
+
+.aboutPanchkarmaText + .aboutPanchkarmaText {
+  margin-top: 0.75rem;
+}
+
+.aboutPanchkarmaImage {
+  order: 2;
+  width: 100%;
+  min-height: 360px;
+  aspect-ratio: 1.22 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-elevated);
+}
+
+@media (max-width: 767px) {
+  .introImage,
+  .aboutPanchkarmaImage {
+    min-height: 270px;
+  }
 }
 
 .readMore {
@@ -148,7 +234,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--primary);
   transition: var(--transition-smooth);
 }
@@ -181,6 +267,18 @@
   text-align: center;
 }
 
+.traditionalCareSection {
+  padding-top: clamp(5.5rem, 8vw, 8rem);
+  padding-bottom: clamp(5.5rem, 8vw, 8rem);
+}
+
+@media (max-width: 767px) {
+  .traditionalCareSection {
+    padding-top: clamp(4.5rem, 12vw, 5.5rem);
+    padding-bottom: clamp(4.5rem, 12vw, 5.5rem);
+  }
+}
+
 .prose {
   margin-top: 2.5rem;
   max-width: 56rem;
@@ -192,9 +290,9 @@
 
 .prose p {
   color: var(--muted-foreground);
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
 .altSection {
-  background-image: var(--gradient-warm);
+  background: var(--gradient-soft);
 }

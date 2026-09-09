@@ -1,6 +1,10 @@
 .card {
   padding: 1.5rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .iconWrap {
@@ -8,7 +12,7 @@
   height: 3.5rem;
   width: 3.5rem;
   border-radius: 999px;
-  background-color: var(--secondary);
+  background: var(--secondary);
   color: var(--primary);
   display: flex;
   align-items: center;
@@ -17,13 +21,14 @@
 }
 
 .title {
-  font-size: 1.125rem;
+  font-size: 1.12rem;
   font-weight: 700;
   color: var(--primary);
 }
 
 .description {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
+  margin-top: 0.6rem;
+  font-size: 0.92rem;
   color: var(--muted-foreground);
+  line-height: 1.7;
 }

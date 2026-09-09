@@ -1,25 +1,112 @@
-// Wellness package content sourced from the Dr. Nature Holistic Panchkarma business content brief.
+import heroPanchkarmaImage from "../assets/panchkarmadetoxandregutiationtherapy.png";
+import shirodharaImage from "../assets/minandrelaxtherapy.png";
+import herbsImage from "../assets/weight.png";
+import clinicImage from "../assets/clinic.jpg";
+import digestiveWellnessImage from "../assets/digestionandgutwellnessprograme.png";
+import womenWellnessImage from "../assets/womenwellnessprograme.png";
+import skinBeautyImage from "../assets/skinandbeauty.png";
+
+export type WellnessProgram = {
+  name: string;
+  description: string;
+  image: string;
+};
+
+export type WellnessProgramGroup = {
+  key: "wellness" | "conditionCare";
+  title: string;
+  items: WellnessProgram[];
+};
+
 export const wellnessPackagesIntro =
-  "Explore our specially designed Ayurvedic and Panchakarma wellness programs focused on holistic health, lifestyle balance, detoxification, rejuvenation, and long-term wellness support. Each program is personalized after expert consultation based on individual health concerns, body constitution, and wellness goals.";
+  "Care designed around you. Our wellness programs combine traditional Ayurvedic techniques, Panchakarma care and lifestyle guidance to support sustainable health, detoxification and inner balance.";
 
 export const wellnessPackagesDisclaimer =
-  "All wellness programs are customized after consultation with our Ayurvedic doctor. Therapies and recommendations may vary depending on individual health condition, body constitution, age, lifestyle, and medical history. These programs are designed to support wellness and are not a substitute for emergency medical treatment.";
+  "All wellness programs are personalized after consultation with our Ayurvedic professionals. Therapies and recommendations may vary according to individual health conditions, body constitution, age, lifestyle and medical history. These programs are designed to support wellness and are not a substitute for emergency medical treatment.";
 
-export const wellnessPackages: string[] = [
-  "Diabetes Management Program",
-  "Thyroid Care Program",
-  "Hypertension Wellness Plan",
-  "Digestive Disorders Care Program",
-  "Piles & Fissure Care Package",
-  "Back & Knee Pain Relief Program",
-  "Cervical & Spine Care Package",
-  "Sciatica Pain Management Program",
-  "Arthritis & Joint Care Therapy",
-  "Respiratory Wellness (Asthma, Sinus & Allergy Relief Package)",
-  "Mental Wellness Program (Migraine, Anxiety, Stress & Insomnia Care)",
-  "Weight Loss & Body Detox Package",
-  "PCOS/PCOD & Female Fertility Wellness Program",
-  "Liver Wellness & Fatty Liver Care Program",
-  "Skin, Psoriasis & Beauty Rejuvenation Package",
-  "Full Body Detox & Panchakarma Rejuvenation Program",
+export const wellnessProgramGroups: WellnessProgramGroup[] = [
+  {
+    key: "wellness",
+    title: "Wellness",
+    items: [
+      {
+        name: "Panchakarma Detox & Rejuvenation Program",
+        description: "A cleansing and rejuvenating program focused on restoring vitality, balance and inner freshness.",
+        image: heroPanchkarmaImage,
+      },
+      {
+        name: "Weight & Metabolic Wellness Program",
+        description: "A supportive approach for metabolic wellness, digestion and sustainable healthy body balance.",
+        image: herbsImage,
+      },
+      {
+        name: "Digestive & Gut Wellness Program",
+        description: "Personalized care that supports gut comfort, digestion and regular rhythm through Ayurvedic guidance.",
+        image: digestiveWellnessImage,
+      },
+      {
+        name: "Stress, Sleep & Mind Wellness Program",
+        description: "Gentle therapies and lifestyle care designed to calm the mind, improve rest and restore ease.",
+        image: shirodharaImage,
+      },
+      {
+        name: "Women's Hormonal & Reproductive Wellness Program",
+        description: "A holistic wellness path that supports hormonal balance, cycle health and long-term wellbeing.",
+        image: womenWellnessImage,
+      },
+      {
+        name: "Skin & Beauty Rejuvenation Program",
+        description: "Traditional care aimed at supporting skin clarity, vitality and healthy radiance from within.",
+        image: skinBeautyImage,
+      },
+    ],
+  },
+  {
+    key: "conditionCare",
+    title: "Condition Care",
+    items: [
+      {
+        name: "Diabetes & Metabolic Care Program",
+        description: "Supportive care for metabolic rhythm, energy balance and long-term lifestyle wellness.",
+        image: clinicImage,
+      },
+      {
+        name: "Thyroid & Metabolic Wellness Program",
+        description: "An integrative approach designed to support hormonal balance, energy and daily resilience.",
+        image: shirodharaImage,
+      },
+      {
+        name: "Hypertension & Cardiovascular Wellness Program",
+        description: "Holistic support for circulation, stress response and heart-healthy lifestyle balance.",
+        image: clinicImage,
+      },
+      {
+        name: "Liver & Metabolic Wellness Program",
+        description: "Traditional support for digestion, detoxification and body balance through personalized care.",
+        image: herbsImage,
+      },
+      {
+        name: "Ayurvedic Anorectal Care Program",
+        description: "A supportive wellness protocol focused on comfort, tissue balance and digestive wellbeing.",
+        image: herbsImage,
+      },
+      {
+        name: "Joint, Back & Spine Care Program",
+        description: "Targeted Ayurvedic support for mobility, comfort and structural balance in the body.",
+        image: heroPanchkarmaImage,
+      },
+      {
+        name: "Respiratory & Allergy Wellness Program",
+        description: "Support for respiratory ease, seasonal balance and daily breathing comfort.",
+        image: shirodharaImage,
+      },
+      {
+        name: "Psoriasis & Chronic Skin Care Program",
+        description: "Gentle regenerative care focused on skin comfort, recovery and long-term balance.",
+        image: herbsImage,
+      },
+    ],
+  },
 ];
+
+export const wellnessPackages: WellnessProgram[] = wellnessProgramGroups.flatMap((group) => group.items);

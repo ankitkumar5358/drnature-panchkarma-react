@@ -20,15 +20,33 @@
 
 .content {
   position: relative;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
   color: var(--primary-foreground);
-  max-width: 42rem;
+  max-width: 1240px;
   margin-inline: auto;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.textBlock {
+  flex: 1;
+  max-width: 42rem;
 }
 
 .title {
   font-size: 1.875rem;
   font-weight: 700;
+  text-align: left;
 }
 
 @media (min-width: 768px) {
@@ -40,13 +58,22 @@
 .description {
   margin-top: 1rem;
   opacity: 0.95;
+  max-width: 36rem;
+  line-height: 1.7;
+  text-align: left;
 }
 
 .actions {
-  margin-top: 2rem;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
   gap: 0.75rem;
+}
+
+@media (max-width: 767px) {
+  .actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }

@@ -1,14 +1,13 @@
 // Central site configuration — edit here to update brand-wide values.
 export const siteConfig = {
   name: "Dr. Nature Holistic Panchkarma",
-  tagline: "Authentic Ayurveda • Panchkarma • Wellness",
+  tagline: "Traditional Ayurvedic techniques • Panchkarma • Wellness",
   city: "Jaipur",
   description:
-    "Dr. Nature Holistic Panchkarma is an Ayurvedic wellness centre offering authentic Panchkarma therapies, detox, rejuvenation and natural healing under expert supervision.",
+    "Dr. Nature Holistic Panchkarma is an Ayurvedic wellness centre offering traditional Ayurvedic techniques, Panchkarma therapies, detoxification, rejuvenation and natural healing support under expert supervision.",
   url: "https://drnaturepanchkarma.com",
 
-  // Verified real values.
-  email: "info@drnaturewellness.com",
+  email: "dnwpanchkarma@gmail.com",
   phone: "+91 6375594364",
   whatsapp: "916375594364",
   address: "Reg. H.O.: 46, Katewa Nagar, Gujar Ki Thadi, New Sanganer Road, Jaipur - 302019, Rajasthan, India",
@@ -30,11 +29,9 @@ export const siteConfig = {
 export const navLinks = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
-  { to: "/treatments", label: "Treatments" },
   { to: "/therapies", label: "Therapies" },
   { to: "/wellness-packages", label: "Wellness Packages" },
   { to: "/consultation", label: "Consultation" },
   { to: "/testimonials", label: "Testimonials" },
-  { to: "/location", label: "Location" },
-  { to: "/contact", label: "Contact" },
+  { to: "/contact", label: "Contact Us" },
 ] as const;

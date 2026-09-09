@@ -14,8 +14,10 @@ export function CTASection({ image, title, description, children }: CTASectionPr
       <img src={image} alt="" className={styles.bgImage} />
       <div className={styles.overlay} />
       <div className={`container ${styles.content}`}>
-        <h2 className={styles.title}>{title}</h2>
-        <p className={styles.description}>{description}</p>
+        <div className={styles.textBlock}>
+          <h2 className={styles.title}>{title}</h2>
+          <p className={styles.description}>{description}</p>
+        </div>
         <div className={styles.actions}>{children}</div>
       </div>
     </section>

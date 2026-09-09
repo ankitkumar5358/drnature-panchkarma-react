@@ -8,19 +8,23 @@ import styles from "./SiteFooter.module.css";
 export function SiteFooter() {
   return (
     <footer className={styles.footer}>
-      <div className={`container ${styles.grid}`}>
-        <div>
+      <div className={styles.grid}>
+        <div className={styles.column}>
+          <h3 className={styles.heading}>About</h3>
           <div className={styles.brandRow}>
             <img src={logo} alt="" width={40} height={40} className={styles.logo} />
             <span className={styles.brandName}>{siteConfig.name}</span>
           </div>
-          <p className={styles.description}>{siteConfig.description}</p>
+          <p className={styles.description}>
+            Dr. Nature Holistic Panchkarma offers authentic Ayurvedic therapies and personalized wellness care to
+            support balance, vitality, and lasting health in a calm, restorative setting.
+          </p>
         </div>
 
-        <div>
+        <div className={styles.column}>
           <h3 className={styles.heading}>Quick Links</h3>
           <ul className={styles.linkList}>
-            {navLinks.slice(0, 6).map((l) => (
+            {navLinks.map((l) => (
               <li key={l.to}>
                 <Link to={l.to}>{l.label}</Link>
               </li>
@@ -28,11 +32,12 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div>
+        <div className={styles.column}>
           <h3 className={styles.heading}>Contact</h3>
           <ul className={styles.contactList}>
             <li className={styles.contactItem}>
-              <FiMapPin size={16} /> {siteConfig.address}
+              <FiMapPin size={16} />
+              <span>{siteConfig.address}</span>
             </li>
             <li className={styles.contactItem}>
               <FiPhone size={16} />
@@ -45,7 +50,7 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div>
+        <div className={styles.column}>
           <h3 className={styles.heading}>Follow Us</h3>
           <div className={styles.socialRow}>
             <a
@@ -79,7 +84,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className={styles.bottomBar}>
-        <div className={`container ${styles.bottomBarInner}`}>
+        <div className={styles.bottomBarInner}>
           © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
         </div>
       </div>

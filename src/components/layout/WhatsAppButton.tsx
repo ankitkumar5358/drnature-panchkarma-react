@@ -3,7 +3,7 @@ import { FiMessageCircle, FiX, FiPhone } from "react-icons/fi";
 import { siteConfig } from "../../data/site";
 import styles from "./WhatsAppButton.module.css";
 
-const quickActions = ["Book an Appointment", "Ask about Treatments", "Request a Call Back", "Locate the Clinic"];
+const quickActions = ["Book a Consultation", "Ask about Therapies", "Request a Call Back", "Explore Wellness Programs"];
 
 export function WhatsAppButton() {
   const [open, setOpen] = useState(false);

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { FiMenu, FiX, FiPhone, FiMail, FiMessageCircle } from "react-icons/fi";
+import { FiMenu, FiX, FiPhone, FiMail } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
-import logo from "../../assets/logo.png";
+import logoIcon from "../../assets/logo-icon.png";
+import logoText from "../../assets/logo-text.png";
 import { siteConfig, navLinks } from "../../data/site";
 import styles from "./SiteHeader.module.css";
 
@@ -19,7 +20,7 @@ export function SiteHeader() {
   return (
     <header className={styles.header}>
       <div className={styles.topBar}>
-        <div className={`container ${styles.topBarInner}`}>
+        <div className={styles.topBarInner}>
           <div className={styles.socials}>
             {socialIcons.map(({ Icon, href, label }) => (
               <a
@@ -36,13 +37,9 @@ export function SiteHeader() {
           </div>
 
           <div className={styles.marqueeViewport}>
-            <div className={styles.marqueeTrack}>
-              {Array.from({ length: 6 }).map((_, i) => (
-                <span key={i} className={styles.marqueeItem}>
-                  100% Ayurvedic Medicines • {siteConfig.name} • {siteConfig.offer}
-                </span>
-              ))}
-            </div>
+            <span className={styles.marqueeItem}>
+              100% Ayurvedic Medicines • {siteConfig.name} • {siteConfig.offer}
+            </span>
           </div>
 
           <a href={`mailto:${siteConfig.email}`} className={styles.emailLink}>
@@ -53,12 +50,12 @@ export function SiteHeader() {
       </div>
 
       <div className={styles.mainNav}>
-        <div className={`container ${styles.mainNavInner}`}>
-          <Link to="/" className={styles.brand}>
-            <img src={logo} alt={`${siteConfig.name} logo`} width={48} height={48} className={styles.logo} />
-            <div className={styles.brandText}>
-              <div className={styles.brandName}>{siteConfig.name}</div>
-              <div className={styles.brandSub}>Ayurveda</div>
+        <div className={styles.mainNavInner}>
+          <Link to="/" className={styles.brand} aria-label="Go to homepage">
+            <div className={styles.brandLogoGroup}>
+              <img src={logoIcon} alt="" className={styles.logoIcon} />
+              {/* <span className={styles.brandDivider} aria-hidden="true" /> */}
+              <img src={logoText} alt={`${siteConfig.name}`} className={styles.logoText} />
             </div>
           </Link>
 
@@ -75,17 +72,9 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className={styles.chatCta}>
-            <a
-              href={`https://wa.me/${siteConfig.whatsapp}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
-            >
-              <FiMessageCircle size={16} />
-              Chat Now
-            </a>
-          </div>
+          <Link to="/contact" className={styles.primaryCta}>
+            Book a Consultation
+          </Link>
 
           <button
             className={styles.menuButton}

@@ -8,21 +8,25 @@
 .topBar {
   background-color: var(--primary);
   color: var(--primary-foreground);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  width: 100%;
 }
 
 .topBarInner {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  height: 2.75rem;
+  gap: 1rem;
+  min-height: 2.8rem;
+  width: 100%;
+  padding-inline: clamp(1rem, 2vw, 2rem);
 }
 
 .socials {
   display: none;
   align-items: center;
   gap: 0.5rem;
+  justify-self: start;
 }
 
 @media (min-width: 768px) {
@@ -35,7 +39,7 @@
   height: 1.75rem;
   width: 1.75rem;
   border-radius: 999px;
-  border: 1px solid color-mix(in oklch, var(--primary-foreground) 40%, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,26 +52,35 @@
 }
 
 .marqueeViewport {
-  flex: 1;
   min-width: 0;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .marqueeTrack {
   display: flex;
+  justify-content: center;
+  align-items: center;
   white-space: nowrap;
   text-align: center;
   font-weight: 500;
-  animation: marquee 25s linear infinite;
 }
 
 .marqueeItem {
+  display: inline-block;
   padding-inline: 2rem;
+  white-space: nowrap;
 }
 
 .emailLink {
   display: none;
   align-items: center;
+  justify-self: end;
+  justify-content: flex-end;
   gap: 0.5rem;
   transition: var(--transition-smooth);
 }
@@ -93,52 +106,73 @@
 }
 
 .mainNav {
-  background-color: var(--background);
+  background: rgba(248, 244, 236, 0.9);
   border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
   box-shadow: var(--shadow-soft);
-}
-
-.mainNav .container {
-  max-width: 1360px;
+  width: 100%;
 }
 
 .mainNavInner {
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  min-height: 5rem;
-  padding-block: 0.625rem;
+  gap: 1rem;
+  min-height: 5.4rem;
+  padding: 0.7rem clamp(1rem, 2vw, 2rem);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  justify-content: flex-start;
   flex-shrink: 0;
-  max-width: 15rem;
+  justify-self: start;
 }
 
-.logo {
-  height: 2.75rem;
-  width: 2.75rem;
+.brandLogoGroup {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.brandDivider {
+  display: block;
+  width: 1px;
+  height: clamp(2.2rem, 3vw, 3.3rem);
+  background: rgba(24, 63, 54, 0.18);
   flex-shrink: 0;
 }
 
-@media (min-width: 1440px) {
-  .logo {
-    height: 3rem;
-    width: 3rem;
-  }
+.logoIcon,
+.logoText {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  height: clamp(2.4rem, 4vw, 4rem);
+  width: auto;
+}
+
+.logoText {
+  height: clamp(1.4rem, 2.2vw, 2.5rem);
+  width: auto;
 }
 
 .brandText {
-  line-height: 1.25;
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
 }
 
 .brandName {
   font-family: var(--font-serif);
-  font-size: clamp(0.85rem, 1.7vw, 1.25rem);
+  font-size: clamp(0.82rem, 1.4vw, 1.2rem);
   font-weight: 700;
   color: var(--primary);
   letter-spacing: 0.01em;
@@ -151,7 +185,7 @@
 
 .brandSub {
   display: none;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: var(--muted-foreground);
@@ -165,11 +199,15 @@
 
 .desktopNav {
   display: none;
+  justify-content: center;
   align-items: center;
   gap: 0.25rem;
+  min-width: 0;
+  justify-self: center;
+  width: 100%;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1180px) {
   .desktopNav {
     display: flex;
   }
@@ -177,20 +215,21 @@
 
 .navLink {
   position: relative;
-  padding: 0.5rem 0.6rem;
-  font-size: 0.86rem;
+  padding: 0.7rem 0.8rem;
+  font-size: 0.98rem;
   font-weight: 600;
   color: var(--foreground);
   white-space: nowrap;
   transition: var(--transition-smooth);
+  border-radius: 999px;
 }
 
 .navLink::after {
   content: "";
   position: absolute;
-  left: 0.75rem;
-  right: 0.75rem;
-  bottom: -0.1rem;
+  left: 0.8rem;
+  right: 0.8rem;
+  bottom: 0.25rem;
   height: 2px;
   background-color: var(--primary);
   transform: scaleX(0);
@@ -200,29 +239,43 @@
 
 .navLink:hover {
   color: var(--primary);
+  background-color: rgba(24, 63, 54, 0.04);
 }
 
-.navLink:hover::after {
+.navLink:hover::after,
+.navLinkActive::after {
   transform: scaleX(1);
 }
 
 .navLinkActive {
   color: var(--primary);
+  background-color: rgba(24, 63, 54, 0.05);
 }
 
-.navLinkActive::after {
-  transform: scaleX(1);
-}
-
-.chatCta {
+.primaryCta {
   display: none;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-smooth);
+  justify-self: end;
 }
 
-@media (min-width: 1440px) {
-  .chatCta {
-    display: flex;
+.primaryCta:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+@media (min-width: 1180px) {
+  .primaryCta {
+    display: inline-flex;
   }
 }
 
@@ -232,9 +285,10 @@
   background: transparent;
   border: none;
   display: inline-flex;
+  justify-self: end;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1180px) {
   .menuButton {
     display: none;
   }
@@ -242,10 +296,10 @@
 
 .mobileNav {
   border-top: 1px solid var(--border);
-  background-color: var(--background);
+  background-color: rgba(248, 244, 236, 0.98);
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1180px) {
   .mobileNav {
     display: none;
   }
@@ -259,7 +313,7 @@
 }
 
 .mobileNavLink {
-  padding: 0.6rem 0.75rem;
+  padding: 0.72rem 0.85rem;
   border-radius: var(--radius-md);
   font-size: 0.9rem;
   font-weight: 600;
@@ -280,7 +334,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.6rem 1rem;
+  padding: 0.72rem 1rem;
   border-radius: 999px;
   background-color: var(--primary);
   color: var(--primary-foreground);

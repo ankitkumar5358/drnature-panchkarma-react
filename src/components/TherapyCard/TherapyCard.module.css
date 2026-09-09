@@ -1,22 +1,22 @@
 .card {
-  padding: 1.25rem;
+  padding: 1.3rem 1.2rem;
   border-radius: var(--radius-xl);
 }
 
 .card:hover {
-  border-color: var(--accent);
+  border-color: rgba(155, 122, 61, 0.4);
 }
 
 .header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
   color: var(--accent);
 }
 
 .name {
-  font-size: 1.1rem;
+  font-size: 1.12rem;
   font-weight: 700;
   color: var(--primary);
   transition: var(--transition-smooth);
@@ -27,6 +27,7 @@
 }
 
 .description {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--muted-foreground);
+  line-height: 1.7;
 }
