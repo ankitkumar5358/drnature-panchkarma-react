@@ -108,8 +108,7 @@ export function Home() {
             <p className={styles.aboutPanchkarmaText}>
               Panchkarma is Ayurveda&rsquo;s classical detoxification and rejuvenation therapy designed to cleanse the
               body, balance the doshas, and support natural healing. Its five core therapies—Vamana, Virechana,
-              Basti, Nasya, and Raktamokshana—help eliminate accumulated toxins, improve digestion, support
-              immunity, reduce stress, and promote physical and mental well-being.
+              Basti, Nasya, and Raktamokshana—help eliminate accumulated toxins, improve digestion, reduce stress, and promote physical and mental wellness.
             </p>
             <p className={styles.aboutPanchkarmaText}>
               Personalized according to individual Prakriti, Panchkarma may also support the management of
@@ -123,17 +122,27 @@ export function Home() {
       </section>
 
       <section className={`section ${styles.traditionalCareSection}`}>
-        <div className="container">
-          <SectionHeading eyebrow="The Science of Detox" title="Traditional Ayurvedic care" />
+        <div className={styles.traditionalCareContainer}>
+          <div className={styles.traditionalCareHeader}>
+            <span className="eyebrow">The Science of Detox</span>
+            <h2 className={styles.traditionalCareTitle}>Traditional Ayurvedic care</h2>
+          </div>
           <div className={styles.prose}>
-            <p>
+            <p className={styles.traditionalCareText}>
               Panchakarma is a deeply restorative branch of Ayurveda focused on cleansing the body, restoring dosha
               balance and supporting vitality from the inside out. It is designed to help the body release accumulated
               toxins while preparing the mind and senses for better long-term wellbeing.
             </p>
-            <p>
+            <p className={styles.traditionalCareText}>
               At Dr. Nature Holistic Panchkarma, each therapy is considered with care, intention and personalization,
               helping to support the body&rsquo;s natural healing patterns and encourage sustainable wellness for everyday life.
+              This thoughtful, individualized approach supports digestion, balances the nervous system and helps maintain
+              steady energy, resilience and clarity throughout the seasons and stages of life.
+            </p>
+            <p className={styles.traditionalCareText}>
+              Ayurveda does not treat symptoms in isolation. It looks at the whole person—diet, routine, digestion,
+              stress response and daily rhythm—so that healing feels natural, sustainable and deeply restorative. This
+              is why our care is designed to support both immediate comfort and long-term wellbeing.
             </p>
           </div>
         </div>

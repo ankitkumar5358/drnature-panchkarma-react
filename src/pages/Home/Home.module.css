@@ -131,19 +131,22 @@
 }
 
 .introImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 540px;
+  object-fit: contain;
+  object-position: center;
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-elevated);
-  width: 100%;
-  min-height: 360px;
-  aspect-ratio: 1.22 / 1;
-  object-fit: cover;
+  background: transparent;
 }
 
 .introContent {
-  background: rgba(229, 239, 228, 0.48);
-  border: 1px solid rgba(32, 86, 70, 0.04);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(32, 86, 70, 0.08);
   border-radius: var(--radius-2xl);
-  box-shadow: 0 8px 18px rgba(28, 67, 56, 0.04);
+  box-shadow: 0 8px 18px rgba(28, 67, 56, 0.05);
   padding: clamp(1.5rem, 2.6vw, 2.4rem);
 }
 
@@ -189,10 +192,10 @@
 
 .aboutPanchkarmaContent {
   order: 1;
-  background: rgba(229, 239, 228, 0.48);
-  border: 1px solid rgba(32, 86, 70, 0.04);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(32, 86, 70, 0.08);
   border-radius: var(--radius-2xl);
-  box-shadow: 0 8px 18px rgba(28, 67, 56, 0.04);
+  box-shadow: 0 8px 18px rgba(28, 67, 56, 0.05);
   padding: clamp(1.5rem, 2.6vw, 2.4rem);
 }
 
@@ -214,12 +217,15 @@
 
 .aboutPanchkarmaImage {
   order: 2;
+  display: block;
   width: 100%;
-  min-height: 360px;
-  aspect-ratio: 1.22 / 1;
-  object-fit: cover;
+  height: auto;
+  max-height: 540px;
+  object-fit: contain;
+  object-position: center;
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-elevated);
+  background: transparent;
 }
 
 @media (max-width: 767px) {
@@ -272,6 +278,24 @@
   padding-bottom: clamp(5.5rem, 8vw, 8rem);
 }
 
+.traditionalCareContainer {
+  width: min(96vw, 82rem);
+  margin-inline: auto;
+}
+
+.traditionalCareHeader {
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.traditionalCareTitle {
+  margin-top: 0.75rem;
+  font-size: clamp(2.2rem, 2.85vw, 2.63rem);
+  font-weight: 700;
+  color: var(--primary);
+}
+
 @media (max-width: 767px) {
   .traditionalCareSection {
     padding-top: clamp(4.5rem, 12vw, 5.5rem);
@@ -281,16 +305,17 @@
 
 .prose {
   margin-top: 2.5rem;
-  max-width: 56rem;
+  max-width: 78rem;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
 }
 
-.prose p {
+.traditionalCareText {
   color: var(--muted-foreground);
   line-height: 1.8;
+  font-size: 1.1rem;
 }
 
 .altSection {
