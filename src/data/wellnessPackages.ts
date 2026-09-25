@@ -110,3 +110,16 @@ export const wellnessProgramGroups: WellnessProgramGroup[] = [
 ];
 
 export const wellnessPackages: WellnessProgram[] = wellnessProgramGroups.flatMap((group) => group.items);
+
+export function slugifyWellnessPackageName(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .replace(/--+/g, "-");
+}
+
+export function getWellnessPackageBySlug(slug: string): WellnessProgram | undefined {
+  return wellnessPackages.find((program) => slugifyWellnessPackageName(program.name) === slug);
+}

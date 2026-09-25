@@ -27,6 +27,9 @@
 }
 
 .tabButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   padding: 0.8rem 1.2rem;
   border-radius: 999px;
   border: 1px solid var(--border);
@@ -37,10 +40,33 @@
   transition: var(--transition-smooth);
 }
 
+.tabButton:focus-visible {
+  outline: 3px solid rgba(24, 63, 54, 0.28);
+  outline-offset: 2px;
+}
+
 .tabButtonActive {
   background: var(--primary);
   color: var(--primary-foreground);
   border-color: var(--primary);
+}
+
+.tabCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(24, 63, 54, 0.12);
+  color: inherit;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.tabButtonActive .tabCount {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .group {
@@ -94,6 +120,7 @@
   flex-direction: column;
   gap: 0.8rem;
   padding: 1.2rem 1.2rem 1.3rem;
+  flex: 1;
 }
 
 .packageTag {
@@ -125,6 +152,27 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
+}
+
+.packageActionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+}
+
+.packageActionLink:hover {
+  transform: translateX(2px);
+}
+
+.packageActionLink:focus-visible {
+  outline: 3px solid rgba(24, 63, 54, 0.28);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
 }
 
 .disclaimer {

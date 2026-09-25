@@ -6,6 +6,7 @@ import { Home } from "./pages/Home/Home";
 import { About } from "./pages/About/About";
 import { Therapies, TherapyCategoryDetailPage } from "./pages/Therapies/Therapies";
 import { WellnessPackages } from "./pages/WellnessPackages/WellnessPackages";
+import { WellnessPackageDetailPage } from "./pages/WellnessPackages/WellnessPackageDetail";
 import { Testimonials } from "./pages/Testimonials/Testimonials";
 import { Contact } from "./pages/Contact/Contact";
 import { Consultation } from "./pages/Consultation/Consultation";
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/therapies" element={<Therapies />} />
           <Route path="/therapies/:slug" element={<TherapyCategoryDetailPage />} />
+          <Route path="/wellness-packages/:slug" element={<WellnessPackageDetailPage />} />
           <Route path="/wellness-packages" element={<WellnessPackages />} />
           <Route path="/consultation" element={<Consultation />} />
           <Route path="/testimonials" element={<Testimonials />} />

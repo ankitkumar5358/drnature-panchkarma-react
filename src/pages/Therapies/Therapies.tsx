@@ -1,7 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { FiArrowRight, FiPhone } from "react-icons/fi";
 import { SEO } from "../../components/SEO/SEO";
-import { PageHero } from "../../components/PageHero/PageHero";
 import { getTherapyCategoryBySlug, therapyCategories } from "../../data/therapies";
 import { siteConfig } from "../../data/site";
 import styles from "./Therapies.module.css";
@@ -94,12 +93,6 @@ export function TherapyCategoryDetailPage() {
         description={`Explore ${category.name} therapies and personalized Ayurvedic care at ${siteConfig.name}.`}
       />
 
-      <PageHero
-        title={category.name}
-        subtitle="Personalized Ayurvedic care designed to support balance, comfort and long-term wellbeing."
-        breadcrumb={category.name}
-      />
-
       <section className="section">
         <div className="container">
           <div className={styles.breadcrumbRow}>
@@ -143,12 +136,12 @@ export function TherapyCategoryDetailPage() {
                     ))}
                   </div>
                   <div className={styles.therapyActions}>
-                    <button type="button" className="btn btn-outline">
+                    {/* <button type="button" className="btn btn-outline">
                       View Details
                     </button>
                     <Link to="/contact" className="btn btn-primary">
                       Book a Consultation
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </article>
