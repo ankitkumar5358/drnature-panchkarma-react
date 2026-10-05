@@ -3,6 +3,11 @@ import { FaLeaf } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { SEO } from "../../components/SEO/SEO";
 import herbsImg from "../../assets/herbs.jpg";
+import founderImage from "../../assets/TP.png";
+import coFounderImage from "../../assets/drpankaj.png";
+import ankitImage from "../../assets/drankit.png";
+import pragyaImage from "../../assets/drpragya.png";
+import yashImage from "../../assets/dryash.png";
 import { siteConfig } from "../../data/site";
 import styles from "./About.module.css";
 
@@ -15,41 +20,36 @@ const keyFeatures = [
 ];
 
 const founderProfile = {
-  image:
-    "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80",
-  alt: "Dr. Nature Holistic Panchkarma founder",
+  image: founderImage,
+  alt: "Tara Prakash Tiwari",
 };
 
 const coFounderProfile = {
-  image:
-    "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
-  alt: "Co-founder and consultation head",
+  image: coFounderImage,
+  alt: "Dr. Pankaj Singh",
 };
 
 const doctors = [
   {
-    image:
-      "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=900&q=80",
-    name: "Dr. Ananya Sharma",
-    designation: "Ayurvedic Consultant",
+    image: yashImage,
+    name: "Dr. Yash Raj Kumawat",
+    designation: "Ayurvedic Consultant | Panchakarma Specialist | Emergency & Preventive Cardiac Care",
     description:
-      "Focused on personalised Ayurvedic consultations, wellness planning and traditional therapies tailored to individual needs.",
+      "Dr. Yash Raj Kumawat is a BAMS-qualified Ayurvedic physician with over 3 years of clinical experience in Ayurveda, Panchakarma, pain management, and preventive healthcare. He has additional training in Yoga (BHU), Preventive Cardiology (NIA), PGDEMS, and AIPR (NIA). He has gained clinical experience at Govt. MCD Hospital, Delhi, Govt. PHC Gandhinagar, Jaipur, and the National Institute of Ayurveda, Jaipur, with exposure to Ayurvedic diagnosis, Panchakarma, and patient care. At Dr. Nature Wellness, he provides personalized Ayurvedic consultations and Panchakarma guidance, focusing on pain management, chronic health concerns, preventive care, and holistic wellness. He is also involved in patient education, professional training, and Ayurveda awareness programs.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=80",
-    name: "Dr. Rahul Mehta",
-    designation: "Ayurvedic Physician",
+    image: pragyaImage,
+    name: "Dr. Pragya Tripathi",
+    designation: "Ayurvedic Consultant | Women’s Health, Infertility & Skin Wellness",
     description:
-      "Experienced in holistic Ayurvedic care with an emphasis on lifestyle, nutrition and long-term wellness.",
+      "Dr. Pragya Tripathi is a BAMS-qualified Ayurvedic physician with over 5 years of clinical experience in Ayurveda and women’s healthcare. Her expertise includes gynecological and menstrual concerns, hormonal health, infertility support, skin and beauty care, and preventive wellness. Her approach combines Ayurvedic principles, personalized treatment, lifestyle and dietary guidance, and holistic care to support women’s health at every stage of life. She also focuses on patient education and long-term wellness, with an emphasis on reproductive health, skin health, and overall wellbeing.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80",
-    name: "Dr. Priya Verma",
-    designation: "Ayurvedic Wellness Specialist",
+    image: ankitImage,
+    name: "Dr. Ankit Yadav",
+    designation: "Ayurvedic Consultant | Panchakarma & Holistic Wellness",
     description:
-      "Provides personalised guidance combining traditional Ayurvedic principles with practical wellness routines.",
+      "Dr. Ankit Yadav is a BAMS-qualified Ayurvedic physician with over 7 years of clinical experience. His areas of expertise include OPD and IPD management, emergency care, Panchakarma therapies, Ayurvedic consultations, and patient counseling. At Dr. Nature Wellness, he provides personalized Ayurvedic consultations and Panchakarma care, along with lifestyle, dietary, and preventive health guidance. He also contributes to patient education and Ayurvedic certificate-course training, with a focus on personalized care and long-term wellness.",
   },
 ];
 
@@ -111,13 +111,23 @@ export function About() {
         <div className={`container ${styles.storyGrid}`}>
           <div className={styles.storyContent}>
             <span className="eyebrow">OUR FOUNDER</span>
-            <h2 className={styles.storyTitle}>Our Founder</h2>
+            <h2 className={styles.storyTitle}>Tara Prakash Tiwari</h2>
             <p className={styles.storyText}>
-              Dr. Nature Holistic Panchkarma was founded with a vision to bring authentic Ayurvedic wisdom into modern
-              wellness. Our founder believes in personalised care that understands the individual, focuses on balance,
-              and supports long-term well-being through traditional Ayurvedic principles.
+              <strong>Managing Director</strong>
+              <br />
+              Dr. Nature Wellness Pvt. Ltd.
+              <br />
+              Vritika Herbotech Pvt. Ltd.
+              <br />
+              Dr. Nature Holistic Panchkarma
             </p>
-            <p className={styles.storySupport}>Rooted in Ayurveda. Guided by personalised care.</p>
+            <p className={styles.storyText}>
+              Dr. Tara Prakash Tiwari holds a Post Graduate in Agriculture Science, a PG Diploma in Plant Protection,
+              and a PG Diploma in Naturopathy and Yoga Sciences. He pursued his career as a research scholar for the
+              Indian Council of Agriculture (Govt. of India) at a National Research Centre. For his tireless efforts
+              and contributions to the industry, Dr. T.P. Tiwari has received multiple important honours, including
+              the Udhyog Ratna Award, Healthcare Excellence Award, and Business Leader of the Year Award.
+            </p>
           </div>
           <div className={styles.storyImageWrap}>
             <img src={founderProfile.image} alt={founderProfile.alt} className={styles.storyImage} loading="lazy" />
@@ -128,17 +138,36 @@ export function About() {
       <section className={`section ${styles.storySection}`}>
         <div className={`container ${styles.storyGrid} ${styles.storyGridReverse}`}>
           <div className={styles.storyImageWrap}>
-            <img src={coFounderProfile.image} alt={coFounderProfile.alt} className={styles.storyImage} loading="lazy" />
+            <img
+              src={coFounderProfile.image}
+              alt={coFounderProfile.alt}
+              className={`${styles.storyImage} ${styles.coFounderImage}`}
+              loading="lazy"
+            />
           </div>
           <div className={styles.storyContent}>
-            <span className="eyebrow">CO-FOUNDER &amp; CONSULTATION HEAD</span>
-            <h2 className={styles.storyTitle}>Co-founder &amp; Consultation Head</h2>
+            <span className="eyebrow">CO-FOUNDER</span>
+            <h2 className={styles.storyTitle}>Dr. Pankaj Singh</h2>
             <p className={styles.storyText}>
-              Our consultation approach focuses on understanding each individual's health concerns, lifestyle and
-              wellness goals before recommending a personalised Ayurvedic approach. Every consultation is designed to
-              make traditional Ayurveda practical, thoughtful and relevant to modern life.
+              <strong>Co-founder, Research &amp; Development | Lead Consultant Physician</strong>
             </p>
-            <p className={styles.storySupport}>Personalised guidance for a balanced and healthier life.</p>
+            <p className={styles.storyText}>
+              Dr. Pankaj Singh is a BAMS-qualified Ayurvedic physician and clinical researcher with nearly 15 years of
+              experience in the research sector of global pharmaceutical companies. He has also completed a Master
+              Diploma in Clinical Research and Development through an advanced online course by Cranfield University, UK.
+            </p>
+            <p className={styles.storyText}>
+              Since joining Dr. Nature Wellness Pvt. Ltd. in August 2021, Dr. Singh has played a key role in its
+              Research &amp; Development initiatives and serves as the Lead Consultant Physician. His professional
+              journey includes participation in over 150 national and international research conferences across the US,
+              UK, Europe, and Asia, along with numerous research certifications and honors.
+            </p>
+            <p className={styles.storyText}>
+              His current research focuses on body detoxification, oxidative stress, rejuvenation, anti-aging, and
+              Panchakarma therapy. He also provides consultations at the Panchakarma Centre, recommending therapies
+              based on individual wellness needs. A seasoned corporate trainer, Dr. Singh also conducts training on
+              diseases, health and wellness, company products, and relevant medical and research topics.
+            </p>
           </div>
         </div>
       </section>

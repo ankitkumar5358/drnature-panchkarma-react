@@ -1,6 +1,7 @@
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { SEO } from "../../components/SEO/SEO";
+import { wellnessPackageDetails } from "../../data/wellnessPackageDetails";
 import {
   getWellnessPackageBySlug,
   slugifyWellnessPackageName,
@@ -10,19 +11,6 @@ import {
 import { siteConfig } from "../../data/site";
 import styles from "./WellnessPackageDetail.module.css";
 
-const defaultWhoItIsFor = [
-  "Individuals seeking a structured, personalized approach to daily wellness",
-  "People looking to support digestion, balance, stress management and recovery through mindful care",
-  "Those who prefer a holistic program that complements their current lifestyle and healthcare routine",
-];
-
-const defaultIncludedItems = [
-  "Professional consultation and personalized guidance",
-  "Lifestyle and routine recommendations",
-  "Supportive care aligned with individual needs",
-  "Follow-up guidance for sustained wellbeing",
-];
-
 export function WellnessPackageDetailPage() {
   const { slug = "" } = useParams();
   const program = getWellnessPackageBySlug(slug);
@@ -31,6 +19,7 @@ export function WellnessPackageDetailPage() {
     return <Navigate to="/wellness-packages" replace />;
   }
 
+  const details = wellnessPackageDetails[program.name];
   const category = wellnessProgramGroups.find((group) => group.items.some((item) => slugifyWellnessPackageName(item.name) === slug))?.title ?? "Wellness";
 
   const breadcrumb = [
@@ -80,19 +69,22 @@ export function WellnessPackageDetailPage() {
 
             <div className={styles.mainColumn}>
               <div className={styles.metaBlock}>
-                <span className="eyebrow">{category}</span>
+                <span className="eyebrow">{details.eyebrow}</span>
                 <h1 className={styles.pageTitle}>{program.name}</h1>
               </div>
 
               <section className={styles.contentSection}>
                 <span className="eyebrow">Program Overview</span>
-                <p className={styles.bodyText}>{program.description}</p>
+                <p className={styles.bodyText}>
+                  {program.description} {details.context}
+                </p>
+                <p className={styles.bodyText}>{details.highlights.join(" | ")}</p>
               </section>
 
               <section className={styles.contentSection}>
-                <span className="eyebrow">Who It Is For</span>
+                <span className="eyebrow">Key Wellness Focus</span>
                 <ul className={styles.list}>
-                  {defaultWhoItIsFor.map((item) => (
+                  {details.focus.map((item) => (
                     <li key={item} className={styles.listItem}>
                       <span className={styles.checkmark} aria-hidden="true">
                         <FiCheck size={16} />
@@ -103,59 +95,26 @@ export function WellnessPackageDetailPage() {
                 </ul>
               </section>
 
-              <section className={styles.contentSection}>
-                <span className="eyebrow">What’s Included</span>
-                <ul className={styles.checkGrid}>
-                  {defaultIncludedItems.map((item) => (
-                    <li key={item} className={styles.checkItem}>
-                      <span className={styles.checkmark} aria-hidden="true">
-                        <FiCheck size={16} />
-                      </span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
+              {details.programs?.map((plan) => (
+                <section key={plan.duration} className={styles.contentSection}>
+                  <span className="eyebrow">{plan.duration}</span>
+                  <p className={styles.bodyText}>May include: {plan.therapies}</p>
+                </section>
+              ))}
 
-              <section className={styles.contentSection}>
-                <span className="eyebrow">Therapeutic Journey</span>
-                <ol className={styles.timeline}>
-                  <li className={styles.timelineItem}>
-                    <span className={styles.timelineNumber}>01</span>
-                    <div>
-                      <h3 className={styles.timelineTitle}>Consultation and assessment</h3>
-                      <p className={styles.timelineText}>
-                        A detailed review of your current health goals, lifestyle and constitution helps shape a care
-                        plan that feels appropriate and sustainable.
-                      </p>
-                    </div>
-                  </li>
-                  <li className={styles.timelineItem}>
-                    <span className={styles.timelineNumber}>02</span>
-                    <div>
-                      <h3 className={styles.timelineTitle}>Personalized care</h3>
-                      <p className={styles.timelineText}>
-                        Your plan is guided by a thoughtful, individualized Ayurvedic approach focused on balance,
-                        comfort and long-term support.
-                      </p>
-                    </div>
-                  </li>
-                  <li className={styles.timelineItem}>
-                    <span className={styles.timelineNumber}>03</span>
-                    <div>
-                      <h3 className={styles.timelineTitle}>Follow-up and lifestyle guidance</h3>
-                      <p className={styles.timelineText}>
-                        Ongoing reflection and daily support help reinforce positive routines and help you maintain
-                        progress after treatment.
-                      </p>
-                    </div>
-                  </li>
-                </ol>
-              </section>
+              {details.packageNote && (
+                <section className={styles.contentSection}>
+                  <span className="eyebrow">Package Details</span>
+                  <p className={styles.bodyText}>{details.packageNote}</p>
+                </section>
+              )}
 
               <section className={styles.contentSection}>
                 <span className="eyebrow">Safety</span>
-                <p className={styles.bodyText}>{wellnessPackagesDisclaimer}</p>
+                <p className={styles.bodyText}>
+                  {details.personalizationNote && `${details.personalizationNote} `}
+                  {wellnessPackagesDisclaimer}
+                </p>
               </section>
             </div>
           </div>

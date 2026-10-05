@@ -270,6 +270,10 @@
   box-shadow: var(--shadow-elevated);
 }
 
+.coFounderImage {
+  object-fit: contain;
+}
+
 @media (min-width: 768px) {
   .storyImage {
     height: 35rem;

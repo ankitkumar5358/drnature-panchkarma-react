@@ -138,7 +138,7 @@ export function TherapyCategoryDetailPage() {
                   <div className={styles.therapyActions}>
                     {/* <button type="button" className="btn btn-outline">
                       View Details
-                    </button>
+                    </butto>
                     <Link to="/contact" className="btn btn-primary">
                       Book a Consultation
                     </Link> */}
