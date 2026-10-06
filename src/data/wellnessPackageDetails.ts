@@ -222,6 +222,21 @@ export const wellnessPackageDetails: Record<string, WellnessPackageDetail> = {
       "Relaxation and stress support",
       "Lifestyle balance",
     ],
+    programs: [
+      {
+        duration: "7-Day Program",
+        therapies:
+          "Shirodhara • Abhyangam Sarvangam • Mild Vashpa Sweda • Shiro Pichu • Nasya • Marma Chikitsa • Head & Neck Relaxation",
+      },
+      {
+        duration: "15-Day Program",
+        therapies:
+          "Shirodhara • Abhyangam Sarvangam • Mild Vashpa Sweda • Shiro Pichu • Shiro Basti • Nasya • Marma Chikitsa • Ksheera Dhara / Takra Dhara • Relaxation Therapy",
+      },
+    ],
+    packageNote: "These therapies are drawn from the Hypertension Management package.",
+    personalizationNote:
+      "Personalized after Ayurvedic consultation. Prescribed thyroid medicines should not be changed without medical advice.",
   },
   "Hypertension & Cardiovascular Wellness Program": {
     eyebrow: "Cardiovascular Wellness",

@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { SiteHeader } from "./components/layout/SiteHeader";
 import { SiteFooter } from "./components/layout/SiteFooter";
 import { WhatsAppButton } from "./components/layout/WhatsAppButton";
@@ -12,9 +13,20 @@ import { Contact } from "./pages/Contact/Contact";
 import { Consultation } from "./pages/Consultation/Consultation";
 import { NotFound } from "./pages/NotFound/NotFound";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
+
+  return null;
+}
+
 export default function App() {
   return (
     <>
+      <ScrollToTop />
       <SiteHeader />
       <main>
         <Routes>

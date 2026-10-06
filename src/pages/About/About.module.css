@@ -216,6 +216,20 @@
   grid-template-areas: "image content";
 }
 
+@media (max-width: 767px) {
+  .storyGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .storyGridReverse {
+    grid-template-areas: none;
+  }
+
+  .storyGrid:not(.storyGridReverse) .storyImageWrap {
+    order: -1;
+  }
+}
+
 @media (min-width: 768px) {
   .storyGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
