@@ -27,7 +27,7 @@ export function Therapies() {
               <span className={styles.eyebrow}>OUR THERAPIES</span>
               <span aria-hidden="true" />
             </div>
-            <h2 className={styles.title}>Authentic Ayurveda. Personalized for You.</h2>
+            <h2 className={styles.title}>Authentic Ayurveda Personalized for You</h2>
             <p className={styles.subtitle}>
               Explore traditional Panchkarma, rejuvenation and specialized Ayurvedic therapies thoughtfully selected according to individual health needs and wellness goals.
             </p>

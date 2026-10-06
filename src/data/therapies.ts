@@ -188,7 +188,7 @@ export const therapyCategories: TherapyCategory[] = [
     slug: "head-shiro",
     name: "Shiro (Head) Therapies",
     summary:
-      "Traditional head and scalp therapies selected to support relaxation, comfort, sleep, and individualized Ayurvedic care.",
+      "Traditional head and scalp therapies selected to support relaxation, comfort, sleep and individualized Ayurvedic care.",
     image: HeadandDharaTherapies,
     detailed: [
       therapy(
@@ -297,7 +297,7 @@ export const therapyCategories: TherapyCategory[] = [
     slug: "eye-ear-oral-care",
     name: "Netra Kriya Kalpa & ENT Therapies",
     summary:
-      "Traditional eye, nasal, ear, and oral care procedures performed with preparations selected for individual needs and professional guidance.",
+      "Traditional eye, nasal, ear and oral care procedures performed with preparations selected for individual needs and professional guidance.",
     image: EyeandENTTherapies,
     detailed: [
       therapy(
@@ -444,7 +444,7 @@ export const therapyCategories: TherapyCategory[] = [
     slug: "targeted-basti",
     name: "Localized Basti Therapies",
     summary:
-      "Localized oil-retention therapies focused on selected body areas, with preparation and application tailored to individual needs.",
+      "Localized oil-retention therapies focused on selected body areas with preparation and application tailored to individual needs.",
     image: LocalizedBastiTherapies,
     detailed: [
       therapy(
@@ -568,7 +568,7 @@ export const therapyCategories: TherapyCategory[] = [
     slug: "abhyanga-body",
     name: "Body Rejuvenation & Oleation Therapies",
     summary:
-      "Body therapies using massage, herbal preparations, and selected liquids to support relaxation, nourishment, and comfortable movement.",
+      "Body therapies using massage, herbal preparations and selected liquids to support relaxation, nourishment and comfortable movement.",
     image: BodyRejuvenationTherapies,
     detailed: [
       therapy(
@@ -653,7 +653,7 @@ export const therapyCategories: TherapyCategory[] = [
     slug: "swedana-pinda-sweda",
     name: "Swedana Therapies",
     summary:
-      "Traditional steam, fomentation, and poultice therapies selected to support warmth, muscle relaxation, and comfortable movement.",
+      "Traditional steam, fomentation and poultice therapies selected to support warmth, muscle relaxation and comfortable movement.",
     image: SwedanaandPotliTherapies,
     detailed: [
       therapy(
