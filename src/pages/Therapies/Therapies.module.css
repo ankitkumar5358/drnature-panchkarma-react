@@ -221,6 +221,13 @@
   background: linear-gradient(180deg, rgba(237, 244, 237, 0.8), rgba(248, 244, 236, 0.7));
 }
 
+.detailSection :global(.container) {
+  width: min(90vw, 1500px);
+  max-width: 90vw;
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
 .detailHeader {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -318,34 +325,58 @@
 }
 
 .therapyListGrid {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1.2rem;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .therapyListGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 .therapyCard {
+  display: grid;
+  grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr);
+  grid-template-areas: "image body";
+  align-items: center;
+  gap: 1.25rem;
   overflow: hidden;
-  padding: 0;
+  min-height: 35rem;
+  height: 35rem;
+  padding: 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow-soft);
+}
+
+.therapyCardReverse {
+  grid-template-columns: minmax(0, 0.64fr) minmax(0, 0.36fr);
+  grid-template-areas: "body image";
+}
+
+.therapyImageWrap {
+  grid-area: image;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(29, 59, 46, 0.08);
+  border-radius: var(--radius-lg);
+  background: rgba(244, 239, 232, 0.8);
 }
 
 .therapyImage {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
   display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .therapyBody {
+  grid-area: body;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
-  padding: 1.1rem 1.15rem 1.2rem;
+  justify-content: center;
+  padding: 0.3rem 0.2rem;
 }
 
 .therapyName {
@@ -380,6 +411,34 @@
   flex-wrap: wrap;
   gap: 0.7rem;
   margin-top: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .detailSection :global(.container) {
+    width: calc(100% - 2rem);
+    max-width: calc(100% - 2rem);
+  }
+
+  .therapyCard,
+  .therapyCardReverse {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "image"
+      "body";
+    min-height: 0;
+    height: auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .therapyImageWrap {
+    height: 17rem;
+    min-height: 0;
+  }
+
+  .therapyBody {
+    padding: 0 0.1rem 0.1rem;
+  }
 }
 
 .ctaCard {

@@ -122,9 +122,14 @@ export function TherapyCategoryDetailPage() {
           </div>
 
           <div className={styles.therapyListGrid}>
-            {therapies.map((therapy) => (
-              <article key={therapy.name} className={`card ${styles.therapyCard}`}>
-                <img src={therapy.image} alt={therapy.name} className={styles.therapyImage} />
+            {therapies.map((therapy, index) => (
+              <article
+                key={therapy.name}
+                className={`card ${styles.therapyCard} ${index % 2 === 1 ? styles.therapyCardReverse : ""}`}
+              >
+                <div className={styles.therapyImageWrap}>
+                  <img src={therapy.image} alt={therapy.name} className={styles.therapyImage} />
+                </div>
                 <div className={styles.therapyBody}>
                   <h3 className={styles.therapyName}>{therapy.name}</h3>
                   <p className={styles.therapyDescription}>{therapy.description}</p>
