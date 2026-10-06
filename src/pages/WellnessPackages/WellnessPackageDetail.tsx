@@ -81,7 +81,7 @@ export function WellnessPackageDetailPage() {
                 <p className={styles.bodyText}>{details.highlights.join(" | ")}</p>
               </section>
 
-              <section className={styles.contentSection}>
+              <section className={`${styles.contentSection} ${styles.focusSection}`}>
                 <span className="eyebrow">Key Wellness Focus</span>
                 <ul className={styles.list}>
                   {details.focus.map((item) => (
@@ -95,21 +95,30 @@ export function WellnessPackageDetailPage() {
                 </ul>
               </section>
 
-              {details.programs?.map((plan) => (
-                <section key={plan.duration} className={styles.contentSection}>
-                  <span className="eyebrow">{plan.duration}</span>
-                  <p className={styles.bodyText}>May include: {plan.therapies}</p>
-                </section>
-              ))}
+              {details.programs && (
+                <div className={styles.programGrid}>
+                  {details.programs.map((plan) => (
+                    <section key={plan.duration} className={styles.programCard}>
+                      <span className="eyebrow">{plan.duration}</span>
+                      <p className={styles.programLabel}>May include:</p>
+                      <ul className={styles.programList}>
+                        {plan.therapies.split("•").map((therapy) => (
+                          <li key={therapy.trim()}>{therapy.trim()}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  ))}
+                </div>
+              )}
 
               {details.packageNote && (
-                <section className={styles.contentSection}>
+                <section className={`${styles.contentSection} ${styles.compactSection}`}>
                   <span className="eyebrow">Package Details</span>
                   <p className={styles.bodyText}>{details.packageNote}</p>
                 </section>
               )}
 
-              <section className={styles.contentSection}>
+              <section className={`${styles.contentSection} ${styles.compactSection}`}>
                 <span className="eyebrow">Safety</span>
                 <p className={styles.bodyText}>
                   {details.personalizationNote && `${details.personalizationNote} `}
