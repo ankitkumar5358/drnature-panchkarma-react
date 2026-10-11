@@ -20,11 +20,15 @@ export function WellnessPackageDetailPage() {
   }
 
   const details = wellnessPackageDetails[program.name];
-  const category = wellnessProgramGroups.find((group) => group.items.some((item) => slugifyWellnessPackageName(item.name) === slug))?.title ?? "Wellness";
+  const categoryGroup = wellnessProgramGroups.find((group) =>
+    group.items.some((item) => slugifyWellnessPackageName(item.name) === slug),
+  );
+  const category = categoryGroup?.title ?? "Wellness";
+  const categoryKey = categoryGroup?.key ?? "wellness";
 
   const breadcrumb = [
-    { label: "Wellness Packages", to: "/wellness-packages" },
-    { label: category, to: "#" },
+    { label: "Wellness Packages", to: `/wellness-packages?category=${categoryKey}` },
+    { label: category, to: `/wellness-packages?category=${categoryKey}` },
     { label: program.name, to: "" },
   ];
 
@@ -75,10 +79,20 @@ export function WellnessPackageDetailPage() {
 
               <section className={styles.contentSection}>
                 <span className="eyebrow">Program Overview</span>
-                <p className={styles.bodyText}>
-                  {program.description} {details.context}
-                </p>
-                <p className={styles.bodyText}>{details.highlights.join(" | ")}</p>
+                {details.overview ? (
+                  details.overview.map((paragraph, index) => (
+                    <p key={`${program.name}-overview-${index}`} className={styles.bodyText}>
+                      {paragraph}
+                    </p>
+                  ))
+                ) : (
+                  <p className={styles.bodyText}>
+                    {program.description} {details.context}
+                  </p>
+                )}
+                <div className={styles.highlightStrip} aria-label="Program highlights">
+                  {details.highlights.join(" | ")}
+                </div>
               </section>
 
               <section className={`${styles.contentSection} ${styles.focusSection}`}>

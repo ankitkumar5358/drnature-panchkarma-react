@@ -8,7 +8,9 @@ import SpecializedTherapies from "../assets/SpecializedTherapies.png";
 
 export interface TherapyDetail {
   name: string;
-  description: string;
+  introduction: string;
+  features: string[];
+  suitableFor: string[];
   tags: string[];
 }
 
@@ -30,7 +32,9 @@ function therapy(
 ): TherapyDetail {
   return {
     name,
-    description: `Introduction: ${introduction} Key Features: ${features.join("; ")} Best Suited For: ${suitableFor.join("; ")}.`,
+    introduction,
+    features,
+    suitableFor,
     tags,
   };
 }
@@ -42,7 +46,7 @@ const bastiFeatures = [
   "Helps reduce dryness and stiffness",
   "Supports flexibility and comfortable movement",
   "Can provide nourishing or cleansing effects depending on the type of Basti",
-  "Treatment is customized according to Prakriti, condition, strength, and therapeutic needs",
+  "Treatment is customized according to Prakriti, condition, strength and therapeutic needs",
 ];
 
 const bastiSuitableFor = [
@@ -60,10 +64,10 @@ const dharaFeatures = [
   "Provides continuous therapeutic application over the selected area",
   "Supports physical and mental relaxation",
   "Helps reduce muscular stiffness and tension",
-  "May provide cooling, nourishing, or warming effects depending on the type",
+  "May provide cooling, nourishing or warming effects depending on the type",
   "Supports joint and muscle comfort",
   "Helps promote flexibility and comfortable movement",
-  "Therapy is selected according to Dosha, condition, and individual therapeutic needs",
+  "Therapy is selected according to Dosha, condition and individual therapeutic needs",
 ];
 
 const dharaSuitableFor = [
@@ -84,7 +88,7 @@ const pindaFeatures = [
   "Helps reduce stiffness and heaviness",
   "Supports local circulation",
   "May be performed as dry or oil-based fomentation depending on the type",
-  "Therapy is selected according to Dosha, condition, and individual therapeutic needs",
+  "Therapy is selected according to Dosha, condition and individual therapeutic needs",
 ];
 
 const pindaSuitableFor = [
@@ -98,6 +102,196 @@ const pindaSuitableFor = [
   "Selected Vata-Kapha musculoskeletal concerns",
 ];
 
+const MatraBastiKyefeature = [
+  "Uses a small quantity of medicated oil",
+  "Gentle and predominantly nourishing in nature",
+  "Administered through the rectal route",
+  "Primarily focused on pacifying and nourishing Vata"
+];
+
+const MatraBastiRecommendedFor = [
+  "Vata aggravation",
+  "Dryness and stiffness",
+  "General weakness",
+  "Musculoskeletal discomfort",
+  "Individuals requiring a gentler Basti approach"
+];
+
+
+const YogaBastiKeyFeatures = [
+  "Structured course of multiple Basti administrations",
+  "Combines decoction-based and oil-based Basti",
+  "Follows a specific classical sequence",
+  "Provides both cleansing and nourishing actions"
+];
+
+const YogaBastiRecommendedFor = [
+  "Vata-dominant disorders",
+  "Persistent stiffness and mobility concerns",
+  "Selected musculoskeletal conditions",
+  "Digestive irregularities associated with Vata",
+  "Conditions requiring a structured Basti regimen"
+];
+
+
+const AsthapanaNiruhaBastiKeyFeatures = [
+  "Predominantly decoction-based formulation",
+  "Administered through the rectal route",
+  "Primarily cleansing in therapeutic approach",
+  "Traditionally used for Dosha elimination, particularly in Vata-related conditions"
+];
+
+const AsthapanaNiruhaBastiRecommendedFor = [
+  "Vata-dominant conditions requiring cleansing",
+  "Selected joint and musculoskeletal concerns",
+  "Abdominal and digestive disturbances",
+  "Stiffness and restricted mobility",
+  "Appropriate conditions requiring Shodhana therapy"
+];
+
+
+const AnuvasanaBastiKeyFeatures = [
+  "Predominantly medicated oil-based therapy",
+  "Administered through the rectal route",
+  "Nourishing and lubricating in nature",
+  "Primarily intended to pacify aggravated Vata"
+];
+
+const AnuvasanaBastiRecommendedFor = [
+  "Vata-related dryness",
+  "Joint stiffness",
+  "General weakness and depletion",
+  "Musculoskeletal discomfort",
+  "Conditions requiring nourishing Basti therapy"
+];
+
+const PatraPindaSwedaKeyFeatures = [
+  "Herbal leaf potali prepared with medicated herbs and oils",
+  "Applied as a warm fomentation over selected body areas",
+  "Combines the therapeutic effects of herbal ingredients, oil, and heat",
+  "Traditionally supports Vata-Kapha balance"
+];
+
+const PatraPindaSwedaRecommendedFor = [
+  "Joint stiffness and discomfort",
+  "Muscular tightness",
+  "Restricted mobility",
+  "Vata-Kapha musculoskeletal conditions",
+  "Localized swelling and heaviness"
+];
+
+
+const ChurnaPindaSwedaKeyFeatures = [
+  "Warm herbal powder potali used for therapeutic fomentation",
+  "Provides dry, warming, and stimulating action",
+  "Particularly useful where excessive oiliness or heaviness is present",
+  "Traditionally supports Kapha and Vata management"
+];
+
+const ChurnaPindaSwedaRecommendedFor = [
+  "Muscular stiffness",
+  "Joint discomfort",
+  "Heaviness and sluggishness",
+  "Kapha-dominant musculoskeletal conditions",
+  "Reduced mobility"
+];
+
+
+const ValukaSwedaKeyFeatures = [
+  "Heated sand-filled potali used for localized fomentation",
+  "Provides dry and penetrating therapeutic heat",
+  "Particularly suitable where dry heat is preferred",
+  "Traditionally used to address localized stiffness and heaviness"
+];
+
+const ValukaSwedaRecommendedFor = [
+  "Joint stiffness",
+  "Localized pain and discomfort",
+  "Muscular tightness",
+  "Swelling associated with selected conditions",
+  "Vata-Kapha musculoskeletal disorders"
+];
+
+
+const JambiraPindaSwedaKeyFeatures = [
+  "Warm potali prepared primarily with lemon and selected herbal ingredients",
+  "Combines herbal fomentation with the warming properties of citrus ingredients",
+  "Provides localized heat and stimulation",
+  "Traditionally used in Vata-Kapha-oriented therapies"
+];
+
+const JambiraPindaSwedaRecommendedFor = [
+  "Joint stiffness and discomfort",
+  "Muscular tightness",
+  "Localized swelling",
+  "Heaviness and restricted movement",
+  "Selected Vata-Kapha musculoskeletal conditions"
+];
+
+
+const KsheerDharaKeyFeatures = [
+  "Continuous flow of medicated milk over the forehead or selected body region",
+  "Traditionally cooling, soothing, and nourishing in nature",
+  "Supports relaxation and a calming therapeutic experience",
+  "Commonly incorporated into Pitta-pacifying protocols"
+];
+
+const KsheerDharaRecommendedFor = [
+  "Pitta-related imbalance",
+  "Mental fatigue and restlessness",
+  "Sleep disturbances",
+  "Stress-related discomfort",
+  "Dryness and heat-related complaints"
+];
+
+
+const TakraDharaKeyFeatures = [
+  "Continuous flow of medicated buttermilk over the forehead",
+  "Traditionally cooling and Pitta-pacifying",
+  "Provides a soothing and calming effect",
+  "Commonly used in scalp and head-focused Ayurvedic therapies"
+];
+
+const TakraDharaRecommendedFor = [
+  "Pitta-related head and scalp concerns",
+  "Excessive scalp oiliness",
+  "Certain chronic scalp conditions",
+  "Stress and mental fatigue",
+  "Sleep-related concerns"
+];
+
+
+const TailDharaKeyFeatures = [
+  "Continuous flow of warm medicated oil over the forehead or selected area",
+  "Traditionally nourishing, grounding, and Vata-pacifying",
+  "Promotes relaxation of the body and mind",
+  "May be incorporated into rejuvenative and restorative protocols"
+];
+
+const TailDharaRecommendedFor = [
+  "Vata-related imbalance",
+  "Stress and mental fatigue",
+  "Sleep disturbances",
+  "Head and neck tension",
+  "Dryness and stiffness"
+];
+
+
+const DhanyamlaDharaKeyFeatures = [
+  "Continuous pouring of warm fermented herbal liquid over the body",
+  "Traditionally warming and stimulating in nature",
+  "Supports circulation and relaxation of muscles",
+  "Commonly incorporated into Kapha- and Vata-oriented therapeutic protocols"
+];
+
+const DhanyamlaDharaRecommendedFor = [
+  "Muscular stiffness and heaviness",
+  "Joint discomfort",
+  "Reduced mobility",
+  "Kapha-related sluggishness",
+  "Certain musculoskeletal conditions"
+];
+
 export const therapyCategories: TherapyCategory[] = [
   {
     slug: "classical-panchakarma",
@@ -108,7 +302,7 @@ export const therapyCategories: TherapyCategory[] = [
     detailed: [
       therapy(
         "Vamana",
-        "Vamana is a classical Panchakarma purification therapy used to help remove aggravated Kapha under the supervision of a qualified Ayurvedic physician. It is performed only after proper assessment and the required preparatory procedures.",
+        "Vamana is a classical Panchakarma therapy involving controlled therapeutic emesis through the oral route, traditionally aimed at eliminating aggravated Kapha and associated Doshas from the upper gastrointestinal tract.",
         [
           "Classical Shodhana therapy for Kapha balance",
           "Supports overall body purification",
@@ -128,7 +322,7 @@ export const therapyCategories: TherapyCategory[] = [
       ),
       therapy(
         "Virechana",
-        "Virechana is a classical Panchakarma cleansing therapy mainly used to help remove aggravated Pitta through a carefully supervised therapeutic purgation process.",
+        "Virechana is a classical Panchakarma therapy involving therapeutic purgation through the gastrointestinal route, traditionally aimed at eliminating aggravated Pitta and associated Doshas through the lower gastrointestinal tract.",
         [
           "Classical purification therapy for Pitta balance",
           "Supports digestive and metabolic balance",
@@ -148,37 +342,37 @@ export const therapyCategories: TherapyCategory[] = [
       ),
       therapy(
         "Basti",
-        "Basti is one of the main therapies of classical Panchakarma and is traditionally used to support Vata Dosha balance. Depending on the individual’s condition and therapeutic needs, Basti may use medicated oils, herbal decoctions, or a combination of both.",
+        "Basti is a classical Panchakarma therapy in which medicated oils, decoctions or other therapeutic preparations are administered through the rectal route, traditionally supporting the elimination and management of aggravated Doshas, particularly Vata.",
         bastiFeatures,
         bastiSuitableFor,
         ["Panchakarma", "Vata Balance", "Therapeutic Care"],
       ),
       therapy(
         "Anuvasana Basti",
-        "Anuvasana Basti is an oil-based Basti mainly used for nourishment, lubrication, and Vata balance.",
-        bastiFeatures,
-        bastiSuitableFor,
+        "Anuvasana Basti is an oil-based Basti therapy administered through the rectal route, traditionally intended to nourish and lubricate the body while supporting the balance and functioning of Vata.",
+        AnuvasanaBastiKeyFeatures,
+        AnuvasanaBastiRecommendedFor,
         ["Oil-Based Basti", "Nourishment", "Vata Balance"],
       ),
       therapy(
         "Asthapana Basti / Niruha Basti",
-        "Asthapana / Niruha Basti is a decoction-based cleansing Basti prepared using selected herbal formulations.",
-        bastiFeatures,
-        bastiSuitableFor,
+        "Asthapana Basti, also known as Niruha Basti, is a decoction-based Basti therapy administered through the rectal route, traditionally intended to facilitate the elimination of aggravated Doshas and support Vata balance.",
+        AsthapanaNiruhaBastiKeyFeatures,
+        AsthapanaNiruhaBastiRecommendedFor,
         ["Decoction-Based Basti", "Cleansing", "Vata Balance"],
       ),
       therapy(
         "Matra Basti",
-        "Matra Basti is a gentle oil-based Basti using a smaller prescribed quantity of medicated oil.",
-        bastiFeatures,
-        bastiSuitableFor,
+        "Matra Basti is a gentle oil-based Basti therapy administered through the rectal route, primarily intended to nourish, lubricate and support the balance and proper functioning of Vata.",
+        MatraBastiKyefeature,
+        MatraBastiRecommendedFor,
         ["Oil-Based Basti", "Gentle Care", "Vata Balance"],
       ),
       therapy(
         "Yoga Basti",
-        "Yoga Basti is a planned therapeutic sequence that combines oil-based and decoction-based Basti procedures.",
-        bastiFeatures,
-        bastiSuitableFor,
+        "Yoga Basti is a structured Basti regimen involving a planned combination of oil-based and decoction-based Basti administered through the rectal route, traditionally used to support Vata balance and therapeutic elimination.",
+        YogaBastiKeyFeatures,
+        YogaBastiRecommendedFor,
         ["Basti Protocol", "Personalized Care", "Vata Balance"],
       ),
     ],
@@ -361,7 +555,7 @@ export const therapyCategories: TherapyCategory[] = [
       ),
       therapy(
         "Nasya",
-        "Nasya is a classical Ayurvedic therapy focused on the head, neck, nasal passages, and upper respiratory area. Prescribed Ayurvedic preparations are administered through the nasal route under professional supervision.",
+        "Nasya is a classical Ayurvedic therapy focused on the head, neck, nasal passages and upper respiratory area. Prescribed Ayurvedic preparations are administered through the nasal route under professional supervision.",
         [
           "Supports nasal and sinus comfort",
           "Helps reduce heaviness in the head",
@@ -419,7 +613,7 @@ export const therapyCategories: TherapyCategory[] = [
       ),
       therapy(
         "Gandusha & Kavala",
-        "Gandusha and Kavala are traditional Ayurvedic oral-care procedures that use medicated oils, herbal decoctions, or other prescribed liquids.",
+        "Gandusha and Kavala are traditional Ayurvedic oral-care procedures that use medicated oils, herbal decoctions or other prescribed liquids.",
         [
           "Supports oral hygiene",
           "Promotes gum health",
@@ -526,7 +720,7 @@ export const therapyCategories: TherapyCategory[] = [
       ),
       therapy(
         "Uro Basti / Hrid Basti",
-        "Uro Basti, also referred to as Hrid Basti in selected therapeutic contexts, is a localized oil-retention therapy performed over the chest area using warm medicated oil. Unexplained, severe, or persistent chest pain requires medical evaluation before any supportive Ayurvedic procedure.",
+        "Uro Basti also referred to as Hrid Basti in selected therapeutic contexts, is a localized oil-retention therapy performed over the chest area using warm medicated oil. Unexplained, severe or persistent chest pain requires medical evaluation before any supportive Ayurvedic procedure.",
         [
           "Localized chest-area therapy",
           "Promotes muscular relaxation",
@@ -613,37 +807,37 @@ export const therapyCategories: TherapyCategory[] = [
       ),
       therapy(
         "Therapeutic Dhara / Parisheka",
-        "Therapeutic Dhara / Parisheka is an Ayurvedic therapy in which a prescribed liquid is poured continuously or rhythmically over the body, head, or a selected area, depending on the individual’s condition. Different preparations may be used according to the purpose of the therapy, including Ksheera Dhara, Takra Dhara, Taila Dhara, and Dhanyamla Dhara.",
+        "Therapeutic Dhara / Parisheka is an Ayurvedic therapy in which a prescribed liquid is poured continuously or rhythmically over the body, head or a selected area, depending on the individual’s condition. Different preparations may be used according to the purpose of the therapy, including Ksheera Dhara, Takra Dhara, Taila Dhara and Dhanyamla Dhara.",
         dharaFeatures,
         dharaSuitableFor,
         ["Therapeutic Dhara", "Personalized Care", "Relaxation"],
       ),
       therapy(
         "Ksheera Dhara",
-        "Ksheera Dhara uses medicated milk and is traditionally selected for its cooling, soothing, and nourishing effects.",
-        dharaFeatures,
-        dharaSuitableFor,
+        "Ksheera Dhara uses medicated milk and is traditionally selected for its cooling, soothing and nourishing effects.",
+        KsheerDharaKeyFeatures,
+        KsheerDharaRecommendedFor,
         ["Dhara Therapy", "Cooling", "Nourishment"],
       ),
       therapy(
         "Takra Dhara",
         "Takra Dhara uses specially prepared medicated buttermilk and is commonly used for cooling and calming therapy.",
-        dharaFeatures,
-        dharaSuitableFor,
+        TakraDharaKeyFeatures,
+        TakraDharaRecommendedFor,
         ["Dhara Therapy", "Cooling", "Calming"],
       ),
       therapy(
         "Taila Dhara",
         "Taila Dhara uses warm medicated oil to support nourishment, relaxation, and flexibility.",
-        dharaFeatures,
-        dharaSuitableFor,
+        TailDharaKeyFeatures,
+        TailDharaRecommendedFor,
         ["Dhara Therapy", "Oil Therapy", "Nourishment"],
       ),
       therapy(
         "Dhanyamla Dhara",
         "Dhanyamla Dhara uses a warm fermented herbal liquid and is traditionally selected for stiffness, heaviness, and selected Vata-Kapha conditions.",
-        dharaFeatures,
-        dharaSuitableFor,
+        DhanyamlaDharaKeyFeatures,
+        DhanyamlaDharaRecommendedFor,
         ["Dhara Therapy", "Herbal Care", "Warmth"],
       ),
     ],
@@ -745,29 +939,29 @@ export const therapyCategories: TherapyCategory[] = [
       therapy(
         "Patra Pinda Sweda",
         "Patra Pinda Sweda uses warm herbal poultices prepared with selected medicinal leaves and medicated oils to support muscle and joint comfort.",
-        pindaFeatures,
-        pindaSuitableFor,
+        PatraPindaSwedaKeyFeatures,
+        PatraPindaSwedaRecommendedFor,
         ["Pinda Sweda", "Herbal Leaves", "Joint Comfort"],
       ),
       therapy(
         "Churna Pinda Sweda",
         "Churna Pinda Sweda uses selected herbal powders wrapped in cloth and applied with controlled warmth over the affected area.",
-        pindaFeatures,
-        pindaSuitableFor,
+        ChurnaPindaSwedaKeyFeatures,
+        ChurnaPindaSwedaRecommendedFor,
         ["Pinda Sweda", "Herbal Powders", "Warmth"],
       ),
       therapy(
         "Valuka Sweda",
         "Valuka Sweda is a dry fomentation technique that uses heated sand wrapped in cloth, especially when dry therapeutic heat is preferred.",
-        pindaFeatures,
-        pindaSuitableFor,
+        ValukaSwedaKeyFeatures,
+        ValukaSwedaRecommendedFor,
         ["Dry Fomentation", "Therapeutic Heat", "Stiffness"],
       ),
       therapy(
         "Jambira Pinda Sweda",
         "Jambira Pinda Sweda uses warm herbal poultices commonly prepared with lemon and selected herbal ingredients for localized stiffness and heaviness.",
-        pindaFeatures,
-        pindaSuitableFor,
+        JambiraPindaSwedaKeyFeatures,
+        JambiraPindaSwedaRecommendedFor,
         ["Pinda Sweda", "Herbal Poultice", "Localized Care"],
       ),
     ],
@@ -842,7 +1036,7 @@ export const therapyCategories: TherapyCategory[] = [
       ),
       therapy(
         "Marma Chikitsa / Marma Therapy",
-        "Marma Chikitsa is a traditional Ayurvedic therapy based on the gentle stimulation of specific vital points of the body using controlled touch, pressure, and appropriate techniques.",
+        "Marma Chikitsa is a traditional Ayurvedic therapy based on the gentle stimulation of specific vital points of the body using controlled touch, pressure and appropriate techniques.",
         [
           "Provides gentle stimulation of Marma points",
           "Promotes muscular relaxation",

@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import { SEO } from "../../components/SEO/SEO";
+import { wellnessPackageDetails } from "../../data/wellnessPackageDetails";
 import {
   slugifyWellnessPackageName,
   wellnessProgramGroups,
@@ -12,10 +13,17 @@ import { siteConfig } from "../../data/site";
 import styles from "./WellnessPackages.module.css";
 
 export function WellnessPackages() {
-  const [activeTab, setActiveTab] = useState<"wellness" | "conditionCare">("wellness");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const requestedGroup = wellnessProgramGroups.find((group) => group.key === searchParams.get("category"));
+  const [activeTab, setActiveTab] = useState<"wellness" | "conditionCare">(requestedGroup?.key ?? "wellness");
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const activeGroup = wellnessProgramGroups.find((group) => group.key === activeTab) ?? wellnessProgramGroups[0];
+
+  const selectTab = (key: "wellness" | "conditionCare") => {
+    setActiveTab(key);
+    setSearchParams({ category: key }, { replace: true });
+  };
 
   const handleTabKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
     const tabCount = wellnessProgramGroups.length;
@@ -25,7 +33,7 @@ export function WellnessPackages() {
       const direction = event.key === "ArrowRight" ? 1 : -1;
       const nextIndex = (index + direction + tabCount) % tabCount;
       const nextTab = wellnessProgramGroups[nextIndex];
-      setActiveTab(nextTab.key);
+      selectTab(nextTab.key);
       tabRefs.current[nextIndex]?.focus();
     }
   };
@@ -61,7 +69,7 @@ export function WellnessPackages() {
                   aria-selected={isActive}
                   aria-controls={panelId}
                   tabIndex={isActive ? 0 : -1}
-                  onClick={() => setActiveTab(group.key)}
+                  onClick={() => selectTab(group.key)}
                   onKeyDown={(event) => handleTabKeyDown(event, index)}
                 >
                   <span>{group.title}</span>
@@ -92,6 +100,16 @@ export function WellnessPackages() {
                     <span className={styles.packageTag}>{activeGroup.title}</span>
                     <h3 className={styles.packageTitle}>{program.name}</h3>
                     <p className={styles.packageDescription}>{program.description}</p>
+                    <div className={styles.packageHighlights}>
+                      <span className={styles.packageHighlightsLabel}>Key Highlights</span>
+                      <ul className={styles.packageHighlightList}>
+                        {wellnessPackageDetails[program.name].highlights.map((highlight) => (
+                          <li key={highlight} className={styles.packageHighlight}>
+                            {highlight}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
                     <div className={styles.packageActions}>
                       <Link

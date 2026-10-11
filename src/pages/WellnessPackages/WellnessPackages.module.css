@@ -147,6 +147,43 @@
   line-height: 1.7;
 }
 
+.packageHighlights {
+  padding: 0.85rem;
+  border: 1px solid rgba(24, 63, 54, 0.12);
+  border-radius: 0.65rem;
+  background: rgba(237, 244, 237, 0.72);
+}
+
+.packageHighlightsLabel {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.packageHighlightList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.packageHighlight {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid rgba(24, 63, 54, 0.12);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
 .packageActions {
   margin-top: auto;
   display: flex;

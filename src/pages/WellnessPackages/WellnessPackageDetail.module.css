@@ -126,8 +126,22 @@
   line-height: 1.85;
 }
 
+.highlightStrip {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0.9rem 0 0;
+  padding: 0.75rem 0;
+  border: 1px solid rgba(24, 63, 54, 0.12);
+  border-radius: 0.65rem;
+  background: rgba(237, 244, 237, 0.92);
+  color: var(--primary);
+  font-weight: 600;
+  line-height: 1.7;
+  text-align: center;
+}
+
 .compactSection .bodyText {
-  font-size: 0.9rem;
+  font-size: 0.65rem;
   line-height: 1.65;
 }
 

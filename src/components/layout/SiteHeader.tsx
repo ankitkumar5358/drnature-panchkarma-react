@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FiMenu, FiX, FiPhone, FiMail } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
@@ -15,7 +15,20 @@ const socialIcons = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
   const phoneHref = `tel:${siteConfig.phone.replace(/\s/g, "")}`;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 0;
+      setHasScrolled(scrolled);
+      if (scrolled) setOpen(false);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className={styles.header}>
@@ -37,9 +50,14 @@ export function SiteHeader() {
           </div>
 
           <div className={styles.marqueeViewport}>
-            <span className={styles.marqueeItem}>
-              100% Ayurvedic Medicines • {siteConfig.name} • {siteConfig.offer}
-            </span>
+            <div className={styles.marqueeTrack}>
+              <span className={styles.marqueeItem}>
+                100% Ayurvedic Medicines • {siteConfig.name} • {siteConfig.offer}
+              </span>
+              <span className={`${styles.marqueeItem} ${styles.marqueeItemDuplicate}`} aria-hidden="true">
+                100% Ayurvedic Medicines • {siteConfig.name} • {siteConfig.offer}
+              </span>
+            </div>
           </div>
 
           <a href={`mailto:${siteConfig.email}`} className={styles.emailLink}>
@@ -49,7 +67,7 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div className={styles.mainNav}>
+      <div className={`${styles.mainNav} ${hasScrolled ? styles.mainNavHidden : ""}`}>
         <div className={styles.mainNavInner}>
           <Link to="/" className={styles.brand} aria-label="Go to homepage">
             <div className={styles.brandLogoGroup}>

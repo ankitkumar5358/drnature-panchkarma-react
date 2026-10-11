@@ -81,7 +81,9 @@ export function TherapyCategoryDetailPage() {
         }))
       : category.namesOnly.map((name) => ({
           name,
-          description: "Targeted Ayurvedic care designed to support balance, comfort and long-term wellness.",
+          introduction: "Targeted Ayurvedic care designed to support balance, comfort and long-term wellness.",
+          features: [],
+          suitableFor: [],
           tags: ["Traditional Care"],
           image: category.image,
         }));
@@ -132,7 +134,32 @@ export function TherapyCategoryDetailPage() {
                 </div>
                 <div className={styles.therapyBody}>
                   <h3 className={styles.therapyName}>{therapy.name}</h3>
-                  <p className={styles.therapyDescription}>{therapy.description}</p>
+                  <div className={styles.therapyDetails}>
+                    <section className={styles.therapyDetail}>
+                      <h4 className={styles.therapyDetailTitle}>Introduction :</h4>
+                      <p className={styles.therapyDescription}>{therapy.introduction}</p>
+                    </section>
+                    {therapy.features.length > 0 && (
+                      <section className={styles.therapyDetail}>
+                        <h4 className={styles.therapyDetailTitle}>Key Features :</h4>
+                        <ul className={styles.therapyDetailList}>
+                          {therapy.features.map((feature) => (
+                            <li key={feature}>{feature}</li>
+                          ))}
+                        </ul>
+                      </section>
+                    )}
+                    {therapy.suitableFor.length > 0 && (
+                      <section className={styles.therapyDetail}>
+                        <h4 className={styles.therapyDetailTitle}>Recommended For :</h4>
+                        <ul className={styles.therapyDetailList}>
+                          {therapy.suitableFor.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </section>
+                    )}
+                  </div>
                   <div className={styles.tagRow}>
                     {therapy.tags.map((tag) => (
                       <span key={`${therapy.name}-${tag}`} className={styles.tag}>
