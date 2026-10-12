@@ -3,8 +3,8 @@ import { FaLeaf } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { SEO } from "../../components/SEO/SEO";
 import herbsImg from "../../assets/herbs.jpg";
-import founderImage from "../../assets/Tp.png";
-import coFounderImage from "../../assets/Pankaj.png";
+import founderImage from "../../assets/tp1.png";
+import coFounderImage from "../../assets/pankaj2.png";
 import ankitImage from "../../assets/drankit.png";
 import pragyaImage from "../../assets/drpragya.png";
 import yashImage from "../../assets/dryash.png";
@@ -128,13 +128,23 @@ export function About() {
             <p className={styles.storyText}>
               Dr. Tara Prakash Tiwari holds a Post Graduate in Agriculture Science, a PG Diploma in Plant Protection,
               and a PG Diploma in Naturopathy and Yoga Sciences. He pursued his career as a research scholar for the
-              Indian Council of Agriculture (Govt. of India) at a National Research Centre. For his tireless efforts
+              Indian Council of Agriculture (Govt. of India) at a National Research Centre.
+            </p>
+            <p className={styles.storyText}>
+              For his tireless efforts
               and contributions to the industry. Dr. T.P. Tiwari has received multiple important honours, including
               the Udhyog Ratna Award, Healthcare Excellence Award and Business Leader of the Year Award.
-            </p>
+              </p>
           </div>
           <div className={styles.storyImageWrap}>
-            <img src={founderProfile.image} alt={founderProfile.alt} className={styles.storyImage} loading="lazy" />
+            <img
+              src={founderProfile.image}
+              alt={founderProfile.alt}
+              className={styles.storyImage}
+              width={2250}
+              height={2250}
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
@@ -145,7 +155,9 @@ export function About() {
             <img
               src={coFounderProfile.image}
               alt={coFounderProfile.alt}
-              className={`${styles.storyImage} ${styles.coFounderImage}`}
+              className={styles.storyImage}
+              width={1149}
+              height={1369}
               loading="lazy"
             />
           </div>
