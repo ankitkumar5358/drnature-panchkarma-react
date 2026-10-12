@@ -3,7 +3,7 @@ import { FaLeaf } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { SEO } from "../../components/SEO/SEO";
 import herbsImg from "../../assets/herbs.jpg";
-import founderImage from "../../assets/tp1.png";
+import founderImage from "../../assets/tp.png";
 import coFounderImage from "../../assets/pankaj2.png";
 import ankitImage from "../../assets/drankit.png";
 import pragyaImage from "../../assets/drpragya.png";
