@@ -123,7 +123,7 @@ export function About() {
               <br />
               Vritika Herbotech Pvt. Ltd.
               <br />
-              Dr. Nature Holistic Panchkarma
+              Dr. Nature Holistic Panchkarma &amp; Consultation
             </p>
             <p className={styles.storyText}>
               Dr. Tara Prakash Tiwari holds a Post Graduate in Agriculture Science, a PG Diploma in Plant Protection,

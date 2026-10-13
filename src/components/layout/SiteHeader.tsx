@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import { FiMenu, FiX, FiPhone, FiMail } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import logoIcon from "../../assets/logo-icon.png";
-import logoText from "../../assets/logo-text.png";
+import logoText from "../../assets/holisticlogo.png";
 import { siteConfig, navLinks } from "../../data/site";
 import styles from "./SiteHeader.module.css";
 
@@ -72,8 +72,7 @@ export function SiteHeader() {
           <Link to="/" className={styles.brand} aria-label="Go to homepage">
             <div className={styles.brandLogoGroup}>
               <img src={logoIcon} alt="" className={styles.logoIcon} />
-              {/* <span className={styles.brandDivider} aria-hidden="true" /> */}
-              <img src={logoText} alt={`${siteConfig.name}`} className={styles.logoText} />
+              <img src={logoText} alt={siteConfig.name} className={styles.logoText} />
             </div>
           </Link>
 

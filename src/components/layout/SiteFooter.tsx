@@ -16,7 +16,7 @@ export function SiteFooter() {
             <span className={styles.brandName}>{siteConfig.name}</span>
           </div>
           <p className={styles.description}>
-            Dr. Nature Holistic Panchkarma offers authentic Ayurvedic therapies and personalized wellness care to
+            Dr. Nature Holistic Panchkarma &amp; Consultation offers authentic Ayurvedic therapies and personalized wellness care to
             support balance, vitality, and lasting health in a calm, restorative setting.
           </p>
         </div>

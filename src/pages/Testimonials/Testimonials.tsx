@@ -82,7 +82,7 @@ export function Testimonials() {
     <>
       <SEO
         title={`Testimonials — ${siteConfig.name}`}
-        description="Sample patient stories and wellness experiences from Dr. Nature Holistic Panchkarma. These demo testimonials can be replaced with real patient feedback later."
+        description="Sample patient stories and wellness experiences from Dr. Nature Holistic Panchkarma & Consultation. These demo testimonials can be replaced with real patient feedback later."
       />
 
       {/* <PageHero

@@ -1,4 +1,4 @@
-# Dr. Nature Holistic Panchkarma
+# Dr. Nature Holistic Panchkarma & Consultation
 
 A responsive website for an Ayurvedic Panchkarma wellness centre — home page, about, therapies,
 wellness packages, consultation booking, and contact, built as a static single-page application.

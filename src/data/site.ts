@@ -1,10 +1,10 @@
 // Central site configuration — edit here to update brand-wide values.
 export const siteConfig = {
-  name: "Dr. Nature Holistic Panchkarma",
+  name: "Dr. Nature Holistic Panchkarma & Consultation",
   tagline: "Traditional Ayurvedic techniques • Panchkarma • Wellness",
   city: "Jaipur",
   description:
-    "Dr. Nature Holistic Panchkarma is an Ayurvedic wellness centre offering traditional Ayurvedic techniques, Panchkarma therapies, detoxification, rejuvenation and natural healing support under expert supervision.",
+    "Dr. Nature Holistic Panchkarma & Consultation is an Ayurvedic wellness centre offering traditional Ayurvedic techniques, Panchkarma therapies, detoxification, rejuvenation and natural healing support under expert supervision.",
   url: "https://drnaturepanchkarma.com",
 
   email: "dnwpanchkarma@gmail.com",
@@ -31,7 +31,7 @@ export const navLinks = [
   { to: "/about", label: "About Us" },
   { to: "/therapies", label: "Therapies" },
   { to: "/wellness-packages", label: "Wellness Packages" },
-  { to: "/consultation", label: "Consultation" },
+  { to: "/consultation", label: "Dr Consultation" },
   { to: "/testimonials", label: "Testimonials" },
   { to: "/contact", label: "Contact Us" },
 ] as const;

@@ -44,9 +44,8 @@ export function Home() {
             <div className={styles.heroContent}>
               <span className={styles.badge}>{siteConfig.city} • Ayurvedic Wellness</span>
               <h1 className={styles.heroTitle}>
-                Restore balance.
+                Restore balance &  Rebuild vitality
                 <br />
-                Rebuild vitality.
               </h1>
               <div className={styles.heroDivider} />
               <p className={styles.heroSubtitle}>
@@ -134,7 +133,7 @@ export function Home() {
               toxins while preparing the mind and senses for better long-term wellbeing.
             </p>
             <p className={styles.traditionalCareText}>
-              At Dr. Nature Holistic Panchkarma, each therapy is considered with care, intention and personalization,
+              At Dr. Nature Holistic Panchkarma &amp; Consultation, each therapy is considered with care, intention and personalization,
               helping to support the body&rsquo;s natural healing patterns and encourage sustainable wellness for everyday life.
               This thoughtful, individualized approach supports digestion, balances the nervous system and helps maintain
               steady energy, resilience and clarity throughout the seasons and stages of life.

@@ -180,8 +180,14 @@
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 1rem;
-  min-height: 5.4rem;
-  padding: 0.7rem clamp(1rem, 2vw, 2rem);
+  min-height: 4.4rem;
+  padding: 0.25rem clamp(1rem, 2vw, 2rem);
+}
+
+@media (max-width: 767px) {
+  .mainNavInner {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
 }
 
 .brand {
@@ -196,14 +202,7 @@
   display: flex;
   align-items: center;
   min-width: 0;
-}
-
-.brandDivider {
-  display: block;
-  width: 1px;
-  height: clamp(2.2rem, 3vw, 3.3rem);
-  background: rgba(24, 63, 54, 0.18);
-  flex-shrink: 0;
+  flex-wrap: nowrap;
 }
 
 .logoIcon,
@@ -216,13 +215,27 @@
 }
 
 .logoIcon {
-  height: clamp(2.4rem, 4vw, 4rem);
+  height: clamp(2rem, 3vw, 2.75rem);
   width: auto;
 }
 
 .logoText {
-  height: clamp(1.4rem, 2.2vw, 2.5rem);
-  width: auto;
+  width: clamp(4rem, 5.5vw, 5rem);
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .brandLogoGroup {
+    gap: 0.15rem;
+  }
+
+  .logoIcon {
+    height: clamp(1.75rem, 8vw, 2rem);
+  }
+
+  .logoText {
+    width: clamp(4.5rem, 20vw, 5rem);
+  }
 }
 
 .brandText {
